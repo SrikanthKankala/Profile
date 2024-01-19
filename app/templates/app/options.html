@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gamer, YouTuber, Student, Developer</title>
+  <style>
+    
+    .opt-container {
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: aqua;
+      padding-top: 4px;
+      padding-bottom: 20px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between; /* Divide into two parts */
+      font-family: Arial, sans-serif;
+    }
+    .opt-options {
+      width: 45%; /* Adjust the width of each part */
+    }
+    .opt-option {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px; /* Add border radius for rounded corners */
+    }
+    .opt-option input {
+      margin-right: 5px;
+      margin-left: 5px; /* Adjust the left margin for inputs */
+      height: 20px; /* Set a fixed height for inputs */
+    }
+
+    /* Apply different background colors to each option */
+    .opt-option:nth-child(1) {
+      background-color: #ffcccb; /* Light Red */
+    }
+    .opt-option:nth-child(2) {
+      background-color: #b3e0ff; /* Light Blue */
+      padding: 12%;
+      margin-top: 5%;
+      margin-bottom: 0;
+    }
+    /* .opt-option:nth-child(3) {
+      background-color: #c2f0c2; /* Light Green *
+    }
+    .opt-option:nth-child(4) {
+      background-color: #ffd966; /* Light Yellow *
+    } */
+  </style>
+</head>
+<body>
+  <div class="opt-container">
+    <div class="opt-options">
+      <div class="opt-option">
+        <input type="radio" id="Public-Friends" name="option" value="Public Friends" checked>Public Friends
+      </div>
+      <div class="opt-option">
+        <input type="radio" id="Friends" name="option" value="Friends">Friends
+      </div>
+    </div>
+    <div class="opt-options">
+      <div class="opt-option">
+        <input type="radio" id="Private-Friends" name="option" value="Private Friends">Private Friends
+      </div>
+      <div class="opt-option">
+        <input type="radio" id="Only-Me" name="option" value="Only Me">Only Me
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Get the selected option from local storage (if available)
+    const selectedOption = localStorage.getItem('selectedOption');
+
+    // If a selected option is found, set the corresponding radio button to checked
+    if (selectedOption) {
+      const radio = document.querySelector(`input[value="${selectedOption}"]`);
+      if (radio) {
+        radio.checked = true;
+      }
+    }
+
+    // Add an event listener to the radio buttons to update local storage when an option is selected
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
+    radioButtons.forEach(radio => {
+      radio.addEventListener('change', function () {
+        if (this.checked) {
+          localStorage.setItem('selectedOption', this.value);
+        }
+      });
+    });
+  </script>
+</body>
+</html>

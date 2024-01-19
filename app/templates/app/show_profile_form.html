@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Show</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove underlines from table header cells */
+    table th {
+     padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <h2>Data Stored</h2>
+  
+  <!-- <table>
+    {% if key1 %}
+    <thead>
+      {% for i in key1 %}  
+      <tr>
+        
+        <th>Contact Number:</th>
+        <td>{{key1.contact_number }}</td></tr>
+        <tr>
+        <th>Email:</th>
+        <td>{{key1.email}}</td></tr>
+        <tr>
+        <th>Lives in:</th>
+        <td>{{key1.lives_in }}</td></tr>
+        <tr>
+        <th>Last studied at:</th>
+        <td>{{key1.last_studied}}</td></tr>
+        <tr>
+        <th>Gender:</th>
+        <td>{{key1.gender}}</td></tr>
+        <tr>
+        <th>Total Experience:</th>
+        <td>{{key1.total_experience}}</td></tr>
+        <tr>
+        <th>Relationship Status:</th>
+        <td>{{key1.relationship_status }}</td></tr>
+        <tr>
+        <th>Languages:</th>
+        <td>{{key1.languages}}</td></tr>
+        <tr>
+        <th>Birthday:</th>
+        <td>{{key1.birthday}}</td></tr>
+      <-- </tr> --
+      <th>Website:</th>
+        <td>{{key1.website}}</td></tr>
+        <tr>
+        <th>Religion:</th>
+        <td>{{key1.religion}}</td></tr>
+
+
+        <td>   
+          <form name="Editform" action="{% url 'editpage' pk=i.id %}" method="post">
+              {% csrf_token %}
+              <input type="submit" value="edit">
+          </form>
+      </td>
+      <td>
+          <form name="Deleteform" action="{% url 'delete' pk=i.id %}" method="post">
+              {% csrf_token %}
+              <input type="submit" value="delete">
+          </form>
+      </td>
+      
+
+        
+      </tr>
+      {% endfor %}
+    </thead>
+        {% endif %}
+  </table> -->
+
+<h3>Show</h3>
+  <table class="table strripedrows">
+    {% if key1 %}
+    <thead>
+      <tr>
+        <th>Contact Number:</th>
+        <th>Email:</th>
+        <th>Lives in:</th>
+        <th>Last studied at:</th>
+        <th>Gender:</th>
+        <th>Total Experience:</th>
+        <th>Relationship Status:</th>
+        <th>Languages:</th>
+        <th>Birthday:</th>
+        <th>Website:</th>
+        <th>Religion:</th>
+        <!-- <th>Edit:</th> -->
+        <!-- <th>Delete:</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in key1 %}
+      <tr>
+        <td>{{ item.contact_number }}</td>
+        <td>{{ item.email }}</td>
+        <td>{{ item.lives_in }}</td>
+        <td>{{ item.last_studied_in}}</td>
+        <td>{{ item.gender }}</td>
+        <td>{{ item.total_experience }}</td>
+        <td>{{ item.relationship_status }}</td>
+        <td>{{ item.languages }}</td>
+        <td>{{ item.birthday }}</td>
+        <td>{{ item.website }}</td>
+        <td>{{ item.religion }}</td>
+        <!-- <td>
+          <form name="Editform" action="{% url 'editpage' pk=item.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="edit">
+          </form>
+        </td> -->
+        <td>
+          <form name="Deleteform" action="{% url 'delete' pk=item.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="delete">
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    {% endif %}
+  </table>
+</div>
+
+</body>
+</html>

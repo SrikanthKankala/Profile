@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Style the buttons with CSS */
+        .button {
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        .like {
+            background-color: #0073e6;
+            color: white;
+        }
+        .comment {
+            background-color: #ff5722;
+            color: white;
+        }
+        .share {
+            background-color: #25d366;
+            color: white;
+        }
+
+        /* Style the comment input box */
+        .comment-input {
+            display: none;
+        }
+
+        /* Style the comment container */
+        .comment-container {
+            margin-top: 10px;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Article Title</h1>
+    <p>Here is some content for the article.</p>
+
+    <!-- Like Button -->
+    <button class="button like">Like</button>
+
+    <!-- Comment Button -->
+    <button class="button comment" id="comment-button">Comment</button>
+
+    <!-- Share Button -->
+    <button class="button share">Share</button>
+
+    <!-- Comment Input Box -->
+    <div class="comment-input" id="comment-input">
+        <textarea rows="4" cols="50" placeholder="Write your comment here..."></textarea>
+        <button class="button" id="post-comment">Post Comment</button>
+    </div>
+
+    <!-- Comment Container -->
+    <div class="comment-container" id="comments-container">
+        <!-- Comments will be added here -->
+    </div>
+
+    <script>
+        // Handle the comment button click event
+        document.getElementById('comment-button').addEventListener('click', function() {
+            // Show the comment input box
+            document.getElementById('comment-input').style.display = 'block';
+        });
+
+        // Handle the "Post Comment" button click event
+        document.getElementById('post-comment').addEventListener('click', function() {
+            // Get the comment text from the textarea
+            const commentText = document.querySelector('#comment-input textarea').value;
+
+            if (commentText.trim() !== '') {
+                // Create a new comment element and append it to the comment container
+                const commentElement = document.createElement('div');
+                commentElement.textContent = commentText;
+                document.getElementById('comments-container').appendChild(commentElement);
+
+                // Clear the textarea and hide the input box
+                document.querySelector('#comment-input textarea').value = '';
+                document.getElementById('comment-input').style.display = 'none';
+            } else {
+                alert('Please enter a comment before posting.');
+            }
+        });
+    </script>
+</body>
+</html>

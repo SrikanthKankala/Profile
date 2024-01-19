@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Edit</title>
+    <style>
+        /* Add your CSS styles here */
+        
+        body {
+    margin: 0;
+    height: 100%;
+    font-family: "Lato", sans-serif;
+   
+  }
+  
+
+.container{        /*TOTAL CONTAINER*/
+    margin:30px;
+    padding: 0;
+    
+    background-color: gainsboro;
+    height: 100%;
+    width:100%;
+    position:fixed;
+   /* overflow:auto; */
+    display: flex;
+}
+
+   
+  .left-container a {
+
+    color: black;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .left-container a:hover {
+    
+    color: orangered;
+  }
+.left-container{     /*LEFT CONTAINER*/
+    width: 30%;
+    height: 97%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* align-items: center; */
+    
+    background-color: white;
+
+}
+
+
+
+
+
+.right-container{      /*RIGHT CONTAINER*/
+    width: 70%;
+    height: 97%;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color:white;
+    overflow-y: scroll;
+
+}
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+       
+
+        .icon-left,
+        .edit-icon-right {
+            color:orange;
+            cursor: pointer;
+            position: absolute;
+            top: 50%; /* Vertically center the icon */
+            transform: translateY(-50%); /* Vertically center the icon */
+            /* display: none; */
+            display: inline;
+            
+        }
+
+        .icon-left {
+             /* left: 10px; */
+             color:gray;
+             /* right:5px; */
+             margin-left: 5px;
+             margin-right:5px;
+             
+        }
+
+ 
+
+
+
+
+
+
+
+         .edit-icon-right {
+            right: 10px; /* Adjust the right position as needed */
+            /* padding:5px;
+            margin: 5px; */
+            /* left: 50px; */
+            cursor: pointer;
+    padding: 5px;
+        }
+        
+
+       
+
+        /* Submit Button */
+        .submit-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+       
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .input-container {
+            position: relative;
+            display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+        }
+
+        
+        /* Show edit icon on hover */
+        /* .input-container:hover .edit-icon {
+            display: inline;
+        } */
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="number"],
+        .form-group input[type="url"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding-left: 30px;
+            flex:1;
+            border: none;
+            outline: none;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            /* background-color: lightblue; */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+
+        top: 14%;
+        left: 87%;
+        transform: translateY(-50%);
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        .links{
+            background-color: whitesmoke;
+            /* align-items: center; */
+            /* text-align: center; */
+            /* text-decoration: none; */
+            margin-bottom: 5px;
+            
+        }
+        /* #contact_number,#email,#lives_in,#last_studied,#gender,#total_experience,#relationship_status,
+        #languages,#birthday,#website,#religion{
+    /* padding-left: 25px; 
+    margin:5px;
+/* color: grey; 
+} */
+.link-icons{
+    margin-right: 5px;
+    margin-left: 5px;
+
+}
+img{
+    height: 50px;
+    width: 0px;
+}
+.calendar-icon-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    /* -----------------NEW CSS-------------- */
+.right-each-container{
+    background-color: grey;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.fa-globe {
+    color: orange; /* Change the color as desired */
+    margin-right: 40px; /* Adjust the spacing as needed */
+}
+.radio-container {
+            display: none;
+            margin-bottom: 10px;
+    position: relative;
+        }
+.globe-icon{
+    position: absolute;
+    right: 0;
+    /* display: none; */
+    /* margin-right: 75px; */
+    
+}
+
+
+
+    
+.opt-container {
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: aqua;
+      padding-top: 4px;
+      padding-bottom: 20px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between; /* Divide into two parts */
+      font-family: Arial, sans-serif;
+    }
+    .opt-options {
+      width: 45%; /* Adjust the width of each part */
+    }
+    .opt-option {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px; /* Add border radius for rounded corners */
+    }
+    .opt-option input {
+      margin-right: 5px;
+      margin-left: 5px; /* Adjust the left margin for inputs */
+      height: 20px; /* Set a fixed height for inputs */
+    }
+
+    /* Apply different background colors to each option */
+    .opt-option:nth-child(1) {
+      background-color: #ffcccb; /* Light Red */
+    }
+    .opt-option:nth-child(2) {
+      background-color: #b3e0ff; /* Light Blue */
+      padding: 12%;
+      margin-top: 5%;
+      margin-bottom: 0;
+    }
+    /* .opt-option:nth-child(3) {
+      background-color: #c2f0c2; /* Light Green *
+    }
+    .opt-option:nth-child(4) {
+      background-color: #ffd966; /* Light Yellow *
+    } */
+    </style>
+</head>
+<body>
+
+
+
+    <div class="right-each-container">
+        <div class="form-container" id="skills">
+        <!-- <div class="form-container" id="skills"> -->
+            <h1>Skills</h1>
+            <!-- <form method="post"> -->
+                <!-- {% csrf_token %} -->
+                <form method="post" action="{% url 'skillsupdatepage' pk=key2.id%}">
+                    {% csrf_token %}
+                <!-- Select Skills -->
+                <form method="post" action="{% url 'skills_update_select_skill' pk=key2.id %}"> 
+                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="select_skills">Skills</label>
+                    <div class="input-container">
+                        <!-- <img src="skills_icon.png" alt="Skills Icon" class="icon-left"> -->
+                        <!-- <a href="https://www.flaticon.com/free-icons/competence"
+                         title="competence icons"></a> -->
+                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-lines-fill icon-left" viewBox="0 0 16 16">
+                            <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+                          </svg>
+                        <input type="text" id="select_skills" name="Select_skills"value="{{key2.skill }}" required readonly>
+                            <!-- <option value="FrontEnd Developer" {% if key2.select_skills == 'FrontEnd' %}selected{% endif %}>FrontEnd Developer</option>
+                    <option value="Backend Developer" {% if key2.select_skills == 'BackEnd' %}selected{% endif %}>BackEnd Developer</option>
+                    <option value="FullStack Developer" {% if key2.select_skills == 'FullStack' %}selected{% endif %}>FullStack Developer</option>
+                           
+                    <-- Add more options as needed --
+                        </select> -->
+                        
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('skills_nameRadioContainer', 'descriptionRadioContainer');"></i>
+                 
+                        <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                        <i class="fas fa-edit edit-icon-right"  data-radio-container="skills_nameRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                            <i class="fas fa-globe globe-icon" id="globe1"onclick="toggleRadioContainer('skills_nameRadioContainer', 'descriptionRadioContainer');"></i>
+                              
+                       
+                        <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                   
+                    </div>
+                </div>
+                </form>
+
+                 
+                
+                    <!-- Radio buttons for "Title" -->
+                    <div class="radio-container" id="skills_nameRadioContainer">
+                        <form method="post" action="{% url 'skills_name_update_visibility' pk=key2.id %}">
+                       
+                            {% csrf_token %}
+                        <div class="opt-container">
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Public-Friends" value="Public Friends"name="skills_name_Visibility"onclick="this.form.submit()"checked>Public Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Friends"value="Friends"name="skills_name_Visibility"onclick="this.form.submit()">Friends
+                              </div>
+                            </div>
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Private-Friends"value="Private Friends"name="skills_name_Visibility"onclick="this.form.submit()">Private Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Only-Me"value="Only Me" name="skills_name_Visibility"onclick="this.form.submit()" >Only Me
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <!-- <button type="submit">Save</button> -->
+                    </div>
+               
+
+                <!-- Rating -->
+                <form method="post" action="{% url 'skills_update_rating' pk=key2.id %}"> 
+                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="rating">Rating</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-half icon-left" viewBox="0 0 16 16">
+                            <path d="M5.354 5.119 7.538.792A.516.516 0 0 1 8 .5c.183 0 .366.097.465.292l2.184 4.327 4.898.696A.537.537 0 0 1 16 6.32a.548.548 0 0 1-.17.445l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256a.52.52 0 0 1-.146.05c-.342.06-.668-.254-.6-.642l.83-4.73L.173 6.765a.55.55 0 0 1-.172-.403.58.58 0 0 1 .085-.302.513.513 0 0 1 .37-.245l4.898-.696zM8 12.027a.5.5 0 0 1 .232.056l3.686 1.894-.694-3.957a.565.565 0 0 1 .162-.505l2.907-2.77-4.052-.576a.525.525 0 0 1-.393-.288L8.001 2.223 8 2.226v9.8z"/>
+                          </svg>
+                        <input type="number" id="rating" name="Rating" value="{{ key2.rating }}"readonly required >
+                        
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('skills_ratingRadioContainer', 'descriptionRadioContainer');"></i>
+                 
+                        <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                        
+                        <i class="fas fa-edit edit-icon-right"  data-radio-container="skills_ratingRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                        <i class="fas fa-globe globe-icon" id="globe1"onclick="toggleRadioContainer('skills_ratingRadioContainer', 'descriptionRadioContainer');"></i>
+                          
+                        
+                        <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                   
+                    </div>
+                </div>
+                </form>
+
+                
+               
+                    <!-- Radio buttons for "Title" -->
+                    <div class="radio-container" id="skills_ratingRadioContainer">
+                        <form method="post" action="{% url 'skills_rating_update_visibility' pk=key2.id %}">
+                       
+                            {% csrf_token %}
+                        <div class="opt-container">
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Public-Friends" value="Public Friends"name="skills_rating_Visibility"onclick="this.form.submit()"checked>Public Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Friends"value="Friends"name="skills_rating_Visibility"onclick="this.form.submit()">Friends
+                              </div>
+                            </div>
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Private-Friends"value="Private Friends"name="skills_rating_Visibility"onclick="this.form.submit()">Private Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Only-Me"value="Only Me" name="skills_rating_Visibility"onclick="this.form.submit()" >Only Me
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <!-- <button type="submit">Save</button> -->
+                    </div>
+               
+
+
+                <!-- Submit Button -->
+                <!-- <button type="submit" class="submit-button">Save<a href="skillspage"> </button></a> -->
+            </form>
+        </div></div><br>
+
+        <script>   
+  // Function to set the selected radio button value based on local storage
+  function setSelectedRadioValue(containerId, localStorageKey) {
+    const container = document.getElementById(containerId);
+    const radioButtons = container.querySelectorAll('input[type="radio"]');
+    const selectedValue = localStorage.getItem(localStorageKey);
+
+    if (selectedValue) {
+      for (const radio of radioButtons) {
+        if (radio.value === selectedValue) {
+          radio.checked = true;
+          break;
+        }
+      }
+    }
+  }
+
+  // Function to handle radio button changes and update local storage
+  function handleRadioChange(containerId, localStorageKey) {
+    const container = document.getElementById(containerId);
+    const radioButtons = container.querySelectorAll('input[type="radio"]');
+
+    for (const radio of radioButtons) {
+      radio.addEventListener('change', function () {
+        if (this.checked) {
+          localStorage.setItem(localStorageKey, this.value);
+        }
+      });
+    }
+  }
+
+  // Call the functions to set the initial radio button state and handle changes for the "Skills" form
+  setSelectedRadioValue('skills_nameRadioContainer', 'skills_nameRadioSelection');
+  handleRadioChange('skills_nameRadioContainer', 'skills_nameRadioSelection');
+
+  setSelectedRadioValue('skills_ratingRadioContainer', 'skills_ratingRadioSelection');
+  handleRadioChange('skills_ratingRadioContainer', 'skills_ratingRadioSelection');
+
+  // You can do the same for other sections in your "Skills" form if needed
+function toggleMargin(editIcon, globeIconId) {
+        const inputElement = editIcon.parentElement.querySelector('input');
+        const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        // Check if any other input field is currently editable
+        const otherEditIcons = document.querySelectorAll(".edit-icon-right");
+        otherEditIcons.forEach(otherEditIcon => {
+            const otherInput = otherEditIcon.parentElement.querySelector('input');
+            if (otherInput !== inputElement && !otherInput.readOnly) {
+                // Other input is editable, make it readonly
+                otherInput.readOnly = true;
+                const otherGlobeIcon = otherEditIcon.parentElement.querySelector("." + globeIconId);
+                const otherSubmitButton = otherEditIcon.parentElement.querySelector(".submit-button");
+                otherSubmitButton.style.display = "none";
+                otherEditIcon.style.display = "inline";
+                otherGlobeIcon.style.marginRight = "40px";
+                const radioContainerId = otherEditIcon.getAttribute("data-radio-container");
+                if (radioContainerId) {
+                    const radioContainer = document.getElementById(radioContainerId);
+                    radioContainer.style.display = "none";
+                }
+            }
+        });
+
+        if (inputElement.readOnly) {
+            // If the input is currently readonly, make it editable
+            inputElement.readOnly = false;
+            submitButton.style.display = "inline";
+            editIcon.style.display = "none";
+            globeIcon.style.marginRight = "80px";
+            inputElement.focus();
+        } else {
+            // If the input is currently editable, make it readonly
+            inputElement.readOnly = true;
+            submitButton.style.display = "none";
+            editIcon.style.display = "inline";
+            globeIcon.style.marginRight = "85px";
+            const radioContainerId = editIcon.getAttribute("data-radio-container");
+            if (radioContainerId) {
+                const radioContainer = document.getElementById(radioContainerId);
+                radioContainer.style.display = "none";
+            }
+        }
+    }
+
+    function toggleRadioContainer(showRadioContainerId, hideRadioContainerId) {
+        const showRadioContainer = document.getElementById(showRadioContainerId);
+        const hideRadioContainer = document.getElementById(hideRadioContainerId);
+
+        if (showRadioContainer) {
+            showRadioContainer.style.display = "block";
+        }
+
+        if (hideRadioContainer) {
+            hideRadioContainer.style.display = "none";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        // function toggleMargin(editIcon, globeIconId) {
+        //     const inputElement = editIcon.parentElement.querySelector('input');
+        //     const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        //     const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        //     // Check if any other input field is currently editable
+        //     const otherEditIcons = document.querySelectorAll(".edit-icon-right");
+        //     otherEditIcons.forEach(otherEditIcon => {
+        //         const otherInput = otherEditIcon.parentElement.querySelector('input');
+        //         if (otherInput !== inputElement && !otherInput.readOnly) {
+        //             // Other input is editable, make it readonly
+        //             otherInput.readOnly = true;
+        //             const otherGlobeIcon = otherEditIcon.parentElement.querySelector("." + globeIconId);
+        //             const otherSubmitButton = otherEditIcon.parentElement.querySelector(".submit-button");
+        //             otherSubmitButton.style.display = "none";
+        //             otherEditIcon.style.display = "inline";
+        //             otherGlobeIcon.style.marginRight = "40px";
+        //         }
+        //     });
+
+        //     if (inputElement.readOnly) {
+        //         // If the input is currently readonly, make it editable
+        //         inputElement.readOnly = false;
+        //         submitButton.style.display = "inline";
+        //         editIcon.style.display = "none";
+        //         globeIcon.style.marginRight = "80px";
+        //         inputElement.focus();
+        //     } else {
+        //         // If the input is currently editable, make it readonly
+        //         inputElement.readOnly = true;
+        //         submitButton.style.display = "none";
+        //         editIcon.style.display = "inline";
+        //         globeIcon.style.marginRight = "85px";
+        //     }
+        // }
+
+
+        // function toggleMargin(editIcon, globeIconId) {
+        //     const inputElement = editIcon.parentElement.querySelector('input');
+        //     const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        //     const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        //     if (inputElement.readOnly) {
+        //         // If the input is currently readonly, make it editable
+        //         inputElement.readOnly = false;
+        //         submitButton.style.display = "inline";
+        //         editIcon.style.display = "none";
+        //         globeIcon.style.marginRight = "80px"; // Set the margin-right to 0
+        //         inputElement.focus();
+        //     } else {
+        //         // If the input is currently editable, make it readonly
+        //         inputElement.readOnly = true;
+        //         submitButton.style.display = "none";
+        //         editIcon.style.display = "inline";
+        //         globeIcon.style.marginRight = "75px"; // Set the margin-right back to 75px
+        //     }
+        // }
+
+
+
+
+
+
+
+
+
+
+  //           function toggleRadioContainer(containerId, otherContainerId) {
+  //              var container = document.getElementById(containerId);
+  //              var otherContainer = document.getElementById(otherContainerId);
+   
+  //              // Close the other container, if open
+  //              closeRadioContainer(otherContainerId);
+   
+  //              if (container.style.display === 'block') {
+  //                  container.style.display = 'none';
+  //              } else {
+  //                  container.style.display = 'block';
+  //              }
+  //          }
+   
+  //          // JavaScript to close the radio button container
+  //          function closeRadioContainer(containerId) {
+  //              var container = document.getElementById(containerId);
+  //              container.style.display = 'none';
+  //          }
+  //  function toggleRadioContainer(containerId) {
+  //              var container = document.getElementById(containerId);
+  //              if (container.style.display === 'block') {
+  //                  container.style.display = 'none';
+  //              } else {
+  //                  container.style.display = 'block';
+  //              }
+  //          }
+      
+   
+  //   function toggleRadioContainer(containerId) {
+  //              var containers = document.querySelectorAll('.radio-container');
+  //              containers.forEach(function(container) {
+  //                  container.style.display = 'none';
+  //              });
+   
+  //              var container = document.getElementById(containerId);
+  //              container.style.display = 'block';
+  //          }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  //      // edit icon
+  //  function toggleInput(editIcon) {
+  //      const inputElement = editIcon.parentElement.querySelector('input');
+  //      const submitButton = editIcon.parentElement.querySelector(".submit-button");
+  //      const globeIcon = editIcon.parentElement.querySelector(".fas.fa-globe");
+   
+  //      if (inputElement.readOnly) {
+  //          // If the input is currently readonly, make it editable
+  //          inputElement.readOnly = false;
+  //          submitButton.style.display = "inline";
+  //          editIcon.style.display = "none";
+  //          globeIcon.style.display = "none"; // Hide the globe icon
+  //          inputElement.focus();
+  //      } else {
+  //          // If the input is currently editable, make it readonly
+  //          inputElement.readOnly = true;
+  //          submitButton.style.display = "none";
+  //          editIcon.style.display = "inline";
+  //          globeIcon.style.display = "inline"; // Show the globe icon
+  //      }
+  //  }
+   
+   
+           </script>
+               
+           
+           
+          
+       
+</body>
+</html>

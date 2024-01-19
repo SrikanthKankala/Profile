@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Edit</title>
+    <style>
+        /* Add your CSS styles here */
+        
+        body {
+    margin: 0;
+    height: 100%;
+    font-family: "Lato", sans-serif;
+   
+  }
+  
+
+.container{        /*TOTAL CONTAINER*/
+    margin:30px;
+    padding: 0;
+    
+    background-color: gainsboro;
+    height: 100%;
+    width:100%;
+    position:fixed;
+   /* overflow:auto; */
+    display: flex;
+}
+
+   
+  .left-container a {
+
+    color: black;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .left-container a:hover {
+    
+    color: orangered;
+  }
+.left-container{     /*LEFT CONTAINER*/
+    width: 30%;
+    height: 97%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* align-items: center; */
+    
+    background-color: white;
+
+}
+
+
+
+
+
+.right-container{      /*RIGHT CONTAINER*/
+    width: 70%;
+    height: 97%;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color:white;
+    overflow-y: scroll;
+
+}
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+       
+
+        .icon-left,
+        .edit-icon-right {
+            color:orange;
+            cursor: pointer;
+            position: absolute;
+            top: 50%; /* Vertically center the icon */
+            transform: translateY(-50%); /* Vertically center the icon */
+            /* display: none; */
+            display: inline;
+            
+        }
+
+        .icon-left {
+             /* left: 10px; */
+             color:gray;
+             /* right:5px; */
+             margin-left: 5px;
+             margin-right:5px;
+             
+        }
+
+ 
+
+
+
+
+
+
+
+         .edit-icon-right {
+            right: 10px; /* Adjust the right position as needed */
+            /* padding:5px;
+            margin: 5px; */
+            /* left: 50px; */
+            cursor: pointer;
+    padding: 5px;
+        }
+        
+
+       
+
+        /* Submit Button */
+        .submit-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+       
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .input-container {
+            position: relative;
+            display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+        }
+
+        
+        /* Show edit icon on hover */
+        /* .input-container:hover .edit-icon {
+            display: inline;
+        } */
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="number"],
+        .form-group input[type="url"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding-left: 30px;
+            flex:1;
+            border: none;
+            outline: none;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            /* background-color: lightblue; */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+
+        top: 14%;
+        left: 87%;
+        transform: translateY(-50%);
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        .links{
+            background-color: whitesmoke;
+            /* align-items: center; */
+            /* text-align: center; */
+            /* text-decoration: none; */
+            margin-bottom: 5px;
+            
+        }
+        /* #contact_number,#email,#lives_in,#last_studied,#gender,#total_experience,#relationship_status,
+        #languages,#birthday,#website,#religion{
+    /* padding-left: 25px; 
+    margin:5px;
+/* color: grey; 
+} */
+.link-icons{
+    margin-right: 5px;
+    margin-left: 5px;
+
+}
+img{
+    height: 50px;
+    width: 0px;
+}
+.calendar-icon-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    /* -----------------NEW CSS-------------- */
+.right-each-container{
+    background-color: grey;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.fa-globe {
+    color: orange; /* Change the color as desired */
+    margin-right: 40px; /* Adjust the spacing as needed */
+}
+.radio-container {
+            display: none;
+            margin-bottom: 10px;
+    position: relative;
+        }
+.globe-icon{
+    position: absolute;
+    right: 0;
+    /* display: none; */
+    /* margin-right: 75px; */
+    
+}
+
+
+    
+.opt-container {
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: aqua;
+      padding-top: 4px;
+      padding-bottom: 20px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between; /* Divide into two parts */
+      font-family: Arial, sans-serif;
+    }
+    .opt-options {
+      width: 45%; /* Adjust the width of each part */
+    }
+    .opt-option {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px; /* Add border radius for rounded corners */
+    }
+    .opt-option input {
+      margin-right: 5px;
+      margin-left: 5px; /* Adjust the left margin for inputs */
+      height: 20px; /* Set a fixed height for inputs */
+    }
+
+    /* Apply different background colors to each option */
+    .opt-option:nth-child(1) {
+      background-color: #ffcccb; /* Light Red */
+    }
+    .opt-option:nth-child(2) {
+      background-color: #b3e0ff; /* Light Blue */
+      padding: 12%;
+      margin-top: 5%;
+      margin-bottom: 0;
+    }
+    /* .opt-option:nth-child(3) {
+      background-color: #c2f0c2; /* Light Green *
+    }
+    .opt-option:nth-child(4) {
+      background-color: #ffd966; /* Light Yellow *
+    } */
+    </style>
+</head>
+<body>
+
+    <div class="right-each-container">
+        <div class="form-container" id="overview">
+            {% if key2 %}   
+        <form method="post" action="{% url 'update' pk=key2.id%}">
+            
+            {% csrf_token %}
+           
+            <h1>Overview</h1> 
+            <form method="post" action="{% url 'update_contact_number' pk=key2.id %}">         
+                <div class="form-group">
+                    <label for="contact_number">Contact Number</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg"class="icon-left" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                          </svg>
+                          <input type="text" name="Contact_number" id="contact_number" id=""   value="{{ key2.contact_number }}" required readonly>
+                          <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('titleRadioContainer', 'descriptionRadioContainer');"></i> -->
+                    
+                          <!-- <i class="fas fa-globe edit-icon-right"></i> Globe icon -->
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <button type="submit" value="submit" style="display: none;">submit</button> -->
+                        <!-- <span class="edit-icon-right" id="addInputBtn" onclick="addInputField()"><i class="fas fa-edit"></i></span> -->
+                        <!-- <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                        <i class="fas fa-edit edit-icon-right"   data-radio-container="titleRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                        <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('titleRadioContainer', 'descriptionRadioContainer');"></i>
+                          
+                        
+                        <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                   
+                    
+                    </div>
+                    
+                    </div>
+            </form>
+    
+           
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="titleRadioContainer">
+                  <form method="post" action="{% url 'overview_contact_update_visibility' pk=key2.id %}">
+                       
+                    {% csrf_token %}
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends" value="Public Friends"name="overview_contactVisibility"onclick="this.form.submit()"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends"value="Friends"name="overview_contactVisibility"onclick="this.form.submit()">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends"value="Private Friends"name="overview_contactVisibility"onclick="this.form.submit()">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me"value="Only Me" name="overview_contactVisibility"onclick="this.form.submit()">Only Me
+                          </div>
+                        </div>
+                      </div>
+                  </form>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+            
+            <form method="post" action="{% url 'update_email' pk=key2.id %}">   
+                {% csrf_token %}
+                    <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-container">
+                        
+                        <svg xmlns="http://www.w3.org/2000/svg"class="icon-left"  width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                          </svg>
+                          <input type="email" name="Email" id="email" id="" value="{{key2.email }}"readonly required >
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('emailRadioContainer', 'descriptionRadioContainer');"></i>
+                    
+                        <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                        
+                        <i class="fas fa-edit edit-icon-right"    data-radio-container="emailRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                        <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('emailRadioContainer', 'descriptionRadioContainer');"></i>
+                        
+                        <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                   
+                    </div>
+                    
+                    </div>
+            </form>
+            
+            
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="emailRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends"name="overview_emailVisibility" value="Public Friends"onclick="this.form.submit()"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends"name="overview_emailVisibility" value="Friends"onclick="this.form.submit()">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends"name="overview_emailVisibility" value="Private Friends"onclick="this.form.submit()">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me"name="overview_emailVisibility" value="Only Me" onclick="this.form.submit()" >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+           
+            <form method="post" action="{% url 'update_lives_in' pk=key2.id %}"> 
+                {% csrf_token %}
+                    <div class="form-group">
+                    <label for="lives_in">Lives In</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg"class="icon-left"  width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                          </svg>
+                          <input type="text" name="Lives_in" id="lives_in" id=""  value="{{ key2.lives_in }}"readonly required >
+                    <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                    <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('lives_inRadioContainer', 'descriptionRadioContainer');"></i>
+               
+                    <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                    
+                    <i class="fas fa-edit edit-icon-right"    data-radio-container="lives_inRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                    <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('lives_inRadioContainer', 'descriptionRadioContainer');"></i>
+                    <button type="submit" class="submit-button" style="display: none;">Submit</button>
+               
+                    </div>
+                    
+                    </div>
+            </form>
+                 
+            
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="lives_inRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends"name="overview_lives_inVisibility"  value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends" name="overview_lives_inVisibility" value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends" name="overview_lives_inVisibility" value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me" name="overview_lives_inVisibility" value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+            
+
+
+            <form method="post" action="{% url 'update_last_studied_in' pk=key2.id %}"> 
+                {% csrf_token %}
+                    <div class="form-group">
+                    <label for="last_studied_in">Last Studied In</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon-left"  width="16" height="16" fill="currentColor" class="bi bi-mortarboard" viewBox="0 0 16 16">
+                            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
+                            <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
+                          </svg>
+                        
+                          <input type="text" name="Last_studied_in" id="last_studied_in"id=""  value="{{ key2.last_studied_in }}" required readonly>
+                          <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('last_studyRadioContainer', 'descriptionRadioContainer');"></i>
+             
+                          <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                          
+                          <i class="fas fa-edit edit-icon-right"   data-radio-container="last_studyRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                          <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('last_studyRadioContainer', 'descriptionRadioContainer');"></i>
+                          
+                          <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                     
+                          <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                </div>
+                   
+                    </div>
+            </form>
+    
+           
+            
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="last_studyRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends"name="overview_last_study_Visibility"  value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends"name="overview_last_study_Visibility" value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends"name="overview_last_study_Visibility" value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me"name="overview_last_study_Visibility" value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+            
+    
+            <form method="post" action="{% url 'update_gender' pk=key2.id %}"> 
+                {% csrf_token %}
+    
+                    <div class="form-group">
+                        {% csrf_token %}
+                    <label for="gender">Gender</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg"   class="icon-left"  width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                          </svg>
+                          <input type="text" name="Gender" id="gender" id="" value="{{key2.gender}}"readonly required >
+                          <!-- <select name="Gender" id="gender" id="" readonly>
+                            <option value="M" {% if key2.gender == 'M' %}selected{% endif %}>Male</option>
+                            <option value="F" {% if key2.gender == 'F' %}selected{% endif %}>Female</option>
+                            <option value="O" {% if key2.gender == 'O' %}selected{% endif %}>Other</option>
+                        </select> -->
+                    <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                    <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('genderRadioContainer', 'descriptionRadioContainer');"></i>
+               
+                    <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                    <i class="fas fa-edit edit-icon-right"   data-radio-container="genderRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                    <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('genderRadioContainer', 'descriptionRadioContainer');"></i>
+                   
+                    <button type="submit" class="submit-button" style="display: none;">Submit</button>
+               
+                </div>
+                    
+                    </div>
+            </form>
+             
+            
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="genderRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends"name="overview_gender_Visibility"  value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends"name="overview_gender_Visibility" value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends" name="overview_gender_Visibility" value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me" name="overview_gender_Visibility" value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+           
+
+            <form method="post" action="{% url 'update_total_experience' pk=key2.id %}"> 
+                {% csrf_token %}
+        <div class="form-group">
+                    <label for="total_experience">Total Experience</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg"class="icon-left" width="16" height="16" fill="currentColor" class="bi bi-stars" viewBox="0 0 16 16">
+                            <path d="M7.657 6.247c.11-.33.576-.33.686 0l.645 1.937a2.89 2.89 0 0 0 1.829 1.828l1.936.645c.33.11.33.576 0 .686l-1.937.645a2.89 2.89 0 0 0-1.828 1.829l-.645 1.936a.361.361 0 0 1-.686 0l-.645-1.937a2.89 2.89 0 0 0-1.828-1.828l-1.937-.645a.361.361 0 0 1 0-.686l1.937-.645a2.89 2.89 0 0 0 1.828-1.828l.645-1.937zM3.794 1.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387A1.734 1.734 0 0 0 4.593 5.69l-.387 1.162a.217.217 0 0 1-.412 0L3.407 5.69A1.734 1.734 0 0 0 2.31 4.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387A1.734 1.734 0 0 0 3.407 2.31l.387-1.162zM10.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732L9.1 2.137a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L10.863.1z"/>
+                          </svg>
+                          <input type="number" name="Total_experience" id="total_experience" id=""  value="{{ key2.total_experience }}"readonly required >
+                    <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                    <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('total_experienceRadioContainer', 'descriptionRadioContainer');"></i>
+                 
+                    <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                  
+                    <i class="fas fa-edit edit-icon-right"    data-radio-container="total_experienceRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                    <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('total_experienceRadioContainer', 'descriptionRadioContainer');"></i>
+                  
+                    <button type="submit" class="submit-button" style="display: none;">Submit</button>
+               
+                </div>
+                   
+        </div>
+            </form>
+
+
+              
+            
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="total_experienceRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends"name="overview_total_experience_Visibility"  value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends"name="overview_total_experience_Visibility" value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends"name="overview_total_experience_Visibility" value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me"name="overview_total_experience_Visibility" value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+           
+    
+
+            <form method="post" action="{% url 'update_relationship_status' pk=key2.id %}"> 
+                {% csrf_token %}
+        <div class="form-group">
+                    <label for="relationship_status">Relationship Status</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg"class="icon-left" width="16" height="16" fill="currentColor" class="bi bi-person-hearts" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M11.5 1.246c.832-.855 2.913.642 0 2.566-2.913-1.924-.832-3.421 0-2.566ZM9 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-9 8c0 1 1 1 1 1h10s1 0 1-1-1-4-6-4-6 3-6 4Zm13.5-8.09c1.387-1.425 4.855 1.07 0 4.277-4.854-3.207-1.387-5.702 0-4.276ZM15 2.165c.555-.57 1.942.428 0 1.711-1.942-1.283-.555-2.281 0-1.71Z"/>
+                          </svg>
+                          <input type="text" name="Relationship_status" id="relationship_status" id="" value="{{ key2.relationship_status }}"readonly required >
+                    <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                    <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('relationshipRadioContainer', 'descriptionRadioContainer');"></i>
+            
+                    <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                    <i class="fas fa-edit edit-icon-right"   data-radio-container="relationshipRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                    <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('relationshipRadioContainer', 'descriptionRadioContainer');"></i>
+                    
+                    <button type="submit" class="submit-button" style="display: none;">Submit</button>
+               
+                </div>
+                   
+        </div>
+            </form>
+
+                       
+            
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="relationshipRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends"name="overview_relationship_status_Visibility" value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends" name="overview_relationship_status_Visibility" value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends"name="overview_relationship_status_Visibility"value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me"name="overview_relationship_status_Visibility"value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Close</button> -->
+                </div>
+           
+
+            <form method="post" action="{% url 'update_languages' pk=key2.id %}"> 
+                {% csrf_token %}
+        <div class="form-group">
+                    <label for="languages">Languages</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg"  class="icon-left"  width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                            <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+                            <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+                          </svg>
+                          <input type="text" name="Languages" id="languages" id="" value="{{ key2.languages }}"readonly required >
+                    <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                    <!-- <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span>
+                    <button type="submit" class="submit-button" style="display: none;">Submit</button> -->
+                    <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('languagesRadioContainer', 'descriptionRadioContainer');"></i>
+          
+                    <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                    <i class="fas fa-edit edit-icon-right"    data-radio-container="languagesRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                    <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('languagesRadioContainer', 'descriptionRadioContainer');"></i>
+                    
+                   
+                    <button type="submit" class="submit-button" style="display: none;">Submit</button>
+               
+                </div>
+                   
+        </div>
+            </form>
+
+
+                        
+
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="languagesRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends" name="overview_languages_Visibility" value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends" name="overview_languages_Visibility" value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends" name="overview_languages_Visibility" value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me" name="overview_languages_Visibility" value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+            
+
+            <form method="post" action="{% url 'update_birthday' pk=key2.id %}"> 
+                {% csrf_token %}  
+        <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <div class="input-container">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon-left" width="16" height="16" fill="currentColor" class="bi bi-cake" viewBox="0 0 16 16">
+                    <!-- Add your SVG path data here -->
+                </svg>
+                <input type="text" id="birthday" name="Birthday" value="{{ key2.birthday|date:'d/m/Y' }}" readonly required >
+                <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('birthdayRadioContainer', 'descriptionRadioContainer');"></i>
+               
+                <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                <i class="fas fa-edit edit-icon-right"    data-radio-container="birthdayRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                    <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('birthdayRadioContainer', 'descriptionRadioContainer');"></i>
+                    
+                
+                <button type="submit" class="submit-button" style="display: none;">Submit</button>
+            </div>
+        </div>
+            </form>
+
+
+                         
+            
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="birthdayRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends"  name="overview_birthday_Visibility"  value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends"  name="overview_birthday_Visibility"  value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends"  name="overview_birthday_Visibility"  value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me"  name="overview_birthday_Visibility"  value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+           
+
+            
+            <form method="post" action="{% url 'update_website' pk=key2.id %}"> 
+                {% csrf_token %} 
+        <div class="form-group">
+                    <label for="website">Website</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg"class="icon-left" width="16" height="16" fill="currentColor" class="bi bi-browser-edge" viewBox="0 0 16 16">
+                            <path d="M9.482 9.341c-.069.062-.17.153-.17.309 0 .162.107.325.3.456.877.613 2.521.54 2.592.538h.002c.667 0 1.32-.18 1.894-.519A3.838 3.838 0 0 0 16 6.819c.018-1.316-.44-2.218-.666-2.664l-.04-.08C13.963 1.487 11.106 0 8 0A8 8 0 0 0 .473 5.29C1.488 4.048 3.183 3.262 5 3.262c2.83 0 5.01 1.885 5.01 4.797h-.004v.002c0 .338-.168.832-.487 1.244l.006-.006a.594.594 0 0 1-.043.041Z"/>
+                            <path d="M.01 7.753a8.137 8.137 0 0 0 .753 3.641 8 8 0 0 0 6.495 4.564 5.21 5.21 0 0 1-.785-.377h-.01l-.12-.075a5.45 5.45 0 0 1-1.56-1.463A5.543 5.543 0 0 1 6.81 5.8l.01-.004.025-.012c.208-.098.62-.292 1.167-.285.129.001.257.012.384.033a4.037 4.037 0 0 0-.993-.698l-.01-.005C6.348 4.282 5.199 4.263 5 4.263c-2.44 0-4.824 1.634-4.99 3.49Zm10.263 7.912c.088-.027.177-.054.265-.084-.102.032-.204.06-.307.086l.042-.002Z"/>
+                            <path d="M10.228 15.667a5.21 5.21 0 0 0 .303-.086l.082-.025a8.019 8.019 0 0 0 4.162-3.3.25.25 0 0 0-.331-.35c-.215.112-.436.21-.663.294a6.367 6.367 0 0 1-2.243.4c-2.957 0-5.532-2.031-5.532-4.644.002-.135.017-.268.046-.399a4.543 4.543 0 0 0-.46 5.898l.003.005c.315.441.707.821 1.158 1.121h.003l.144.09c.877.55 1.721 1.078 3.328.996Z"/>
+                          </svg>
+                          <input type="url" name="Website" id="website" id=""  value="{{ key2.website }}"readonly required >
+                    <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                    <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('websiteRadioContainer', 'descriptionRadioContainer');"></i>
+        
+                    <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                   
+                    <i class="fas fa-edit edit-icon-right"    data-radio-container="websiteRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                    <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('websiteRadioContainer', 'descriptionRadioContainer');"></i>
+                    
+                   
+                    <button type="submit" class="submit-button" style="display: none;">Submit</button>
+               
+                </div>
+                    
+        </div>
+            </form>
+
+                       
+            
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="websiteRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends"  name="overview_website_Visibility"   value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends"  name="overview_website_Visibility"  value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends"  name="overview_website_Visibility"  value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me"  name="overview_website_Visibility"  value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+           
+
+            <form method="post" action="{% url 'update_religion' pk=key2.id %}"> 
+                {% csrf_token %} 
+        <div class="form-group">
+                    <label for="religion">Religion</label>
+                    <div class="input-container">
+                        <!-- <i class='fas fa-church icon-left'style='font-size:15px'></i> -->
+                        <i class='fas fa-synagogue icon-left'></i>
+                        <input type="text" name="Religion" id="religion" id=""  value="{{ key2.religion }}"readonly required >
+                    <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                    <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('religionRadioContainer', 'descriptionRadioContainer');"></i>
+               
+                    <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                    <i class="fas fa-edit edit-icon-right"   data-radio-container="religionRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                    <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('religionRadioContainer', 'descriptionRadioContainer');"></i>
+                    
+                   
+                    <button type="submit" class="submit-button" style="display: none;">Submit</button>
+               
+                </div>
+                    
+        </div>
+            </form>
+    
+               
+            
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="religionRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends"   name="overview_religion_Visibility"  value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends"   name="overview_religion_Visibility" value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends"   name="overview_religion_Visibility" value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me"   name="overview_religion_Visibility" value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+            
+
+        <!-- <button  type="submit"class="submit-button">Save <a href="profilepage"> </button></a> -->
+                </form>
+        
+        </div></div><br>
+
+
+        <script> 
+ function saveRadioOptions(containerId) {
+        const container = document.getElementById(containerId);
+        const selectedRadio = container.querySelector('input[type="radio"]:checked');
+        if (selectedRadio) {
+            localStorage.setItem(containerId, selectedRadio.id);
+        }
+    }
+
+    // Function to retrieve and set the selected radio button options on page load
+    function retrieveRadioOptions(containerId) {
+        const container = document.getElementById(containerId);
+        const storedRadioId = localStorage.getItem(containerId);
+        if (storedRadioId) {
+            const storedRadio = container.querySelector(`input[type="radio"][id="${storedRadioId}"]`);
+            if (storedRadio) {
+                storedRadio.checked = true;
+            }
+        }
+    }
+
+    // Call the retrieveRadioOptions function for each radio container on page load
+    retrieveRadioOptions('titleRadioContainer');
+    retrieveRadioOptions('emailRadioContainer');
+    retrieveRadioOptions('lives_inRadioContainer');
+    retrieveRadioOptions('last_studyRadioContainer');
+    
+    retrieveRadioOptions('genderRadioContainer');
+    retrieveRadioOptions('total_experienceRadioContainer');
+    retrieveRadioOptions('relationshipRadioContainer');
+    retrieveRadioOptions('languagesRadioContainer');
+
+    retrieveRadioOptions('birthdayRadioContainer');
+    retrieveRadioOptions('websiteRadioContainer');
+    retrieveRadioOptions('religionRadioContainer');
+
+    // Add event listeners to save selected options when radio buttons are clicked
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.addEventListener('click', () => {
+            saveRadioOptions(radio.closest('.radio-container').id);
+        });
+    });
+
+
+        function toggleMargin(editIcon, globeIconId) {
+        const inputElement = editIcon.parentElement.querySelector('input');
+        const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        // Check if any other input field is currently editable
+        const otherEditIcons = document.querySelectorAll(".edit-icon-right");
+        otherEditIcons.forEach(otherEditIcon => {
+            const otherInput = otherEditIcon.parentElement.querySelector('input');
+            if (otherInput !== inputElement && !otherInput.readOnly) {
+                // Other input is editable, make it readonly
+                otherInput.readOnly = true;
+                const otherGlobeIcon = otherEditIcon.parentElement.querySelector("." + globeIconId);
+                const otherSubmitButton = otherEditIcon.parentElement.querySelector(".submit-button");
+                otherSubmitButton.style.display = "none";
+                otherEditIcon.style.display = "inline";
+                otherGlobeIcon.style.marginRight = "40px";
+                const radioContainerId = otherEditIcon.getAttribute("data-radio-container");
+                if (radioContainerId) {
+                    const radioContainer = document.getElementById(radioContainerId);
+                    radioContainer.style.display = "none";
+                }
+            }
+        });
+
+        if (inputElement.readOnly) {
+            // If the input is currently readonly, make it editable
+            inputElement.readOnly = false;
+            submitButton.style.display = "inline";
+            editIcon.style.display = "none";
+            globeIcon.style.marginRight = "80px";
+            inputElement.focus();
+        } else {
+            // If the input is currently editable, make it readonly
+            inputElement.readOnly = true;
+            submitButton.style.display = "none";
+            editIcon.style.display = "inline";
+            globeIcon.style.marginRight = "85px";
+            const radioContainerId = editIcon.getAttribute("data-radio-container");
+            if (radioContainerId) {
+                const radioContainer = document.getElementById(radioContainerId);
+                radioContainer.style.display = "none";
+            }
+        }
+    }
+
+    function toggleRadioContainer(showRadioContainerId, hideRadioContainerId) {
+        const showRadioContainer = document.getElementById(showRadioContainerId);
+        const hideRadioContainer = document.getElementById(hideRadioContainerId);
+
+        if (showRadioContainer) {
+            showRadioContainer.style.display = "block";
+        }
+
+        if (hideRadioContainer) {
+            hideRadioContainer.style.display = "none";
+        }
+    }
+        
+
+        //  function toggleMargin(editIcon, globeIconId) {
+        //     const inputElement = editIcon.parentElement.querySelector('input');
+        //     const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        //     const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        //     // Check if any other input field is currently editable
+        //     const otherEditIcons = document.querySelectorAll(".edit-icon-right");
+        //     otherEditIcons.forEach(otherEditIcon => {
+        //         const otherInput = otherEditIcon.parentElement.querySelector('input');
+        //         if (otherInput !== inputElement && !otherInput.readOnly) {
+        //             // Other input is editable, make it readonly
+        //             otherInput.readOnly = true;
+        //             const otherGlobeIcon = otherEditIcon.parentElement.querySelector("." + globeIconId);
+        //             const otherSubmitButton = otherEditIcon.parentElement.querySelector(".submit-button");
+        //             otherSubmitButton.style.display = "none";
+        //             otherEditIcon.style.display = "inline";
+        //             otherGlobeIcon.style.marginRight = "40px";
+        //         }
+        //     });
+
+        //     if (inputElement.readOnly) {
+        //         // If the input is currently readonly, make it editable
+        //         inputElement.readOnly = false;
+        //         submitButton.style.display = "inline";
+        //         editIcon.style.display = "none";
+        //         globeIcon.style.marginRight = "80px";
+        //         inputElement.focus();
+        //     } else {
+        //         // If the input is currently editable, make it readonly
+        //         inputElement.readOnly = true;
+        //         submitButton.style.display = "none";
+        //         editIcon.style.display = "inline";
+        //         globeIcon.style.marginRight = "85px";
+        //     }
+        // }
+
+
+
+
+
+
+
+        // function toggleMargin(editIcon, globeIconId) {
+        //     const inputElement = editIcon.parentElement.querySelector('input');
+        //     const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        //     const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        //     if (inputElement.readOnly) {
+        //         // If the input is currently readonly, make it editable
+        //         inputElement.readOnly = false;
+        //         submitButton.style.display = "inline";
+        //         editIcon.style.display = "none";
+        //         globeIcon.style.marginRight = "80px"; // Set the margin-right to 0
+        //         inputElement.focus();
+        //     } else {
+        //         // If the input is currently editable, make it readonly
+        //         inputElement.readOnly = true;
+        //         submitButton.style.display = "none";
+        //         editIcon.style.display = "inline";
+        //         globeIcon.style.marginRight = "75px"; // Set the margin-right back to 75px
+        //     }
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
+  //           function toggleRadioContainer(containerId, otherContainerId) {
+  //              var container = document.getElementById(containerId);
+  //              var otherContainer = document.getElementById(otherContainerId);
+   
+  //              // Close the other container, if open
+  //              closeRadioContainer(otherContainerId);
+   
+  //              if (container.style.display === 'block') {
+  //                  container.style.display = 'none';
+  //              } else {
+  //                  container.style.display = 'block';
+  //              }
+  //          }
+   
+  //          // JavaScript to close the radio button container
+  //          function closeRadioContainer(containerId) {
+  //              var container = document.getElementById(containerId);
+  //              container.style.display = 'none';
+  //          }
+  //  function toggleRadioContainer(containerId) {
+  //              var container = document.getElementById(containerId);
+  //              if (container.style.display === 'block') {
+  //                  container.style.display = 'none';
+  //              } else {
+  //                  container.style.display = 'block';
+  //              }
+  //          }
+      
+   
+  //   function toggleRadioContainer(containerId) {
+  //              var containers = document.querySelectorAll('.radio-container');
+  //              containers.forEach(function(container) {
+  //                  container.style.display = 'none';
+  //              });
+   
+  //              var container = document.getElementById(containerId);
+  //              container.style.display = 'block';
+  //          }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  //      // edit icon
+  //  function toggleInput(editIcon) {
+  //      const inputElement = editIcon.parentElement.querySelector('input');
+  //      const submitButton = editIcon.parentElement.querySelector(".submit-button");
+  //      const globeIcon = editIcon.parentElement.querySelector(".fas.fa-globe");
+   
+  //      if (inputElement.readOnly) {
+  //          // If the input is currently readonly, make it editable
+  //          inputElement.readOnly = false;
+  //          submitButton.style.display = "inline";
+  //          editIcon.style.display = "none";
+  //          globeIcon.style.display = "none"; // Hide the globe icon
+  //          inputElement.focus();
+  //      } else {
+  //          // If the input is currently editable, make it readonly
+  //          inputElement.readOnly = true;
+  //          submitButton.style.display = "none";
+  //          editIcon.style.display = "inline";
+  //          globeIcon.style.display = "inline"; // Show the globe icon
+  //      }
+  //  }
+   
+   
+           </script>
+               
+           
+           
+           {% endif %}  
+       
+</body></html>

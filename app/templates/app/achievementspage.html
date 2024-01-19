@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Show</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove underlines from table header cells */
+    table th {
+     padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <h2>Data Stored</h2>
+  
+
+
+<h3>Show</h3>
+  <table class="table strripedrows">
+    {% if key1 %}
+    <thead>
+      <tr>
+        <th>Title:</th>
+        <th>Start Date:</th>
+        <th>End Date:</th>
+        <th>Description:</th>
+        <th>Image:</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in key1 %}
+      <tr>
+        <td>{{ item.ach_title }}</td>
+        <td>{{ item.start_date }}</td>
+        <td>{{ item.end_date }}</td>
+        <td>{{ item.ach_des}}</td>
+        <td>{{ item.image}}</td>
+       
+        <td>
+          <form name="Deleteform" action="{% url 'achivementdeletepage' pk=item.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="delete">
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    {% endif %}
+  </table>
+</div>
+
+</body>
+</html>

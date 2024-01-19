@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Edit</title>
+    <style>
+        /* Add your CSS styles here */
+        
+        body {
+    margin: 0;
+    height: 100%;
+    font-family: "Lato", sans-serif;
+   
+  }
+  
+
+.container{        /*TOTAL CONTAINER*/
+    margin:30px;
+    padding: 0;
+    
+    background-color: gainsboro;
+    height: 100%;
+    width:100%;
+    position:fixed;
+   /* overflow:auto; */
+    display: flex;
+}
+
+   
+  .left-container a {
+
+    color: black;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .left-container a:hover {
+    
+    color: orangered;
+  }
+.left-container{     /*LEFT CONTAINER*/
+    width: 30%;
+    height: 97%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* align-items: center; */
+    
+    background-color: white;
+
+}
+
+
+
+
+
+.right-container{      /*RIGHT CONTAINER*/
+    width: 70%;
+    height: 97%;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color:white;
+    overflow-y: scroll;
+
+}
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+       
+
+        .icon-left,
+        .edit-icon-right {
+            color:orange;
+            cursor: pointer;
+            position: absolute;
+            top: 50%; /* Vertically center the icon */
+            transform: translateY(-50%); /* Vertically center the icon */
+            /* display: none; */
+            display: inline;
+            
+        }
+
+        .icon-left {
+             /* left: 10px; */
+             color:gray;
+             /* right:5px; */
+             margin-left: 5px;
+             margin-right:5px;
+             
+        }
+
+ 
+
+
+
+
+
+
+
+         .edit-icon-right {
+            right: 10px; /* Adjust the right position as needed */
+            /* padding:5px;
+            margin: 5px; */
+            /* left: 50px; */
+            cursor: pointer;
+    padding: 5px;
+        }
+        
+
+       
+
+        /* Submit Button */
+        .submit-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+       
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .input-container {
+            position: relative;
+            display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+        }
+
+        
+        /* Show edit icon on hover */
+        /* .input-container:hover .edit-icon {
+            display: inline;
+        } */
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="number"],
+        .form-group input[type="url"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding-left: 30px;
+            flex:1;
+            border: none;
+            outline: none;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            /* background-color: lightblue; */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+
+        top: 14%;
+        left: 87%;
+        transform: translateY(-50%);
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        .links{
+            background-color: whitesmoke;
+            /* align-items: center; */
+            /* text-align: center; */
+            /* text-decoration: none; */
+            margin-bottom: 5px;
+            
+        }
+        /* #contact_number,#email,#lives_in,#last_studied,#gender,#total_experience,#relationship_status,
+        #languages,#birthday,#website,#religion{
+    /* padding-left: 25px; 
+    margin:5px;
+/* color: grey; 
+} */
+.link-icons{
+    margin-right: 5px;
+    margin-left: 5px;
+
+}
+img{
+    height: 50px;
+    width: 0px;
+}
+.calendar-icon-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    /* -----------------NEW CSS-------------- */
+.right-each-container{
+    background-color: grey;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.fa-globe {
+    color: orange; /* Change the color as desired */
+    margin-right: 40px; /* Adjust the spacing as needed */
+}
+.radio-container {
+            display: none;
+            margin-bottom: 10px;
+    position: relative;
+        }
+.globe-icon{
+    position: absolute;
+    right: 0;
+    /* display: none; */
+    /* margin-right: 75px; */
+    
+}
+
+
+    
+.opt-container {
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: aqua;
+      padding-top: 4px;
+      padding-bottom: 20px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between; /* Divide into two parts */
+      font-family: Arial, sans-serif;
+    }
+    .opt-options {
+      width: 45%; /* Adjust the width of each part */
+    }
+    .opt-option {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px; /* Add border radius for rounded corners */
+    }
+    .opt-option input {
+      margin-right: 5px;
+      margin-left: 5px; /* Adjust the left margin for inputs */
+      height: 20px; /* Set a fixed height for inputs */
+    }
+
+    /* Apply different background colors to each option */
+    .opt-option:nth-child(1) {
+      background-color: #ffcccb; /* Light Red */
+    }
+    .opt-option:nth-child(2) {
+      background-color: #b3e0ff; /* Light Blue */
+      padding: 12%;
+      margin-top: 5%;
+      margin-bottom: 0;
+    }
+    /* .opt-option:nth-child(3) {
+      background-color: #c2f0c2; /* Light Green *
+    }
+    .opt-option:nth-child(4) {
+      background-color: #ffd966; /* Light Yellow *
+    } */
+    </style>
+</head>
+<body>
+    <div class="right-each-container">
+        <div class="form-container"id="relationships" >
+            <h1>Relationships</h1>
+           
+                <!-- {% csrf_token %} -->
+        
+                <!-- Name -->
+        
+                <form method="post" action="{% url 'person_update_name' pk=key2.id %}"> 
+                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alphabet icon-left" viewBox="0 0 16 16">
+                            <path d="M2.204 11.078c.767 0 1.201-.356 1.406-.737h.059V11h1.216V7.519c0-1.314-.947-1.783-2.11-1.783C1.355 5.736.75 6.42.69 7.27h1.216c.064-.323.313-.552.84-.552.527 0 .864.249.864.771v.464H2.346C1.145 7.953.5 8.568.5 9.496c0 .977.693 1.582 1.704 1.582Zm.42-.947c-.44 0-.845-.235-.845-.718 0-.395.269-.684.84-.684h.991v.538c0 .503-.444.864-.986.864Zm5.593.937c1.216 0 1.948-.869 1.948-2.31v-.702c0-1.44-.727-2.305-1.929-2.305-.742 0-1.328.347-1.499.889h-.063V3.983h-1.29V11h1.27v-.791h.064c.21.532.776.86 1.499.86Zm-.43-1.025c-.66 0-1.113-.518-1.113-1.28V8.12c0-.825.42-1.343 1.098-1.343.684 0 1.075.518 1.075 1.416v.45c0 .888-.386 1.401-1.06 1.401Zm2.834-1.328c0 1.47.87 2.378 2.305 2.378 1.416 0 2.139-.777 2.158-1.763h-1.186c-.06.425-.313.732-.933.732-.66 0-1.05-.512-1.05-1.352v-.625c0-.81.371-1.328 1.045-1.328.635 0 .879.425.918.776h1.187c-.02-.986-.787-1.806-2.14-1.806-1.41 0-2.304.918-2.304 2.338v.65Z"/>
+                          </svg>
+                          
+                        <input type="text" id="name" name="Name" value="{{key2.name}}"readonly required >
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('relation_nameRadioContainer', 'descriptionRadioContainer');"></i>
+                
+                        <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                           
+                        <i class="fas fa-edit edit-icon-right"  data-radio-container="relation_nameRadioContainer"   onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                        <i class="fas fa-globe globe-icon" id="globe1"onclick="toggleRadioContainer('relation_nameRadioContainer', 'descriptionRadioContainer');"></i>
+                          
+                        
+                        <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                       
+                    </div>
+                </div>
+                </form>
+
+                
+
+                  
+                
+                    
+                    <div class="radio-container" id="relation_nameRadioContainer">
+                        <form method="post" action="{% url 'relationship_name_update_visibility' pk=key2.id %}">
+                       
+                            {% csrf_token %}
+                        <div class="opt-container">
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Public-Friends" value="Public Friends"name="relationship_name_Visibility"onclick="this.form.submit()"checked>Public Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Friends"value="Friends"name="relationship_name_Visibility"onclick="this.form.submit()">Friends
+                              </div>
+                            </div>
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Private-Friends"value="Private Friends"name="relationship_name_Visibility"onclick="this.form.submit()">Private Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Only-Me"value="Only Me" name="relationship_name_Visibility"onclick="this.form.submit()" >Only Me
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <!-- <button type="submit">Save</button> -->
+                    </div>
+                
+
+                <!-- Select Relationships (Dropdown) -->
+        
+                <form method="post" action="{% url 'person_update_relationships' pk=key2.id %}"> 
+                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="relationship_type">Relationship Type</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                            <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+                          </svg>
+                        <input type="text" id="relationship_type" name="Relationship_type" value="{{key2.relationship_type}}"readOnly required >
+                            <!-- <option value="" disabled selected>Select Relationship</option>
+                            <option value="friend" {% if key2.relationship_type == 'friend' %}selected{% endif %}>Friend</option>
+                            <option value="family" {% if key2.relationship_type == 'family' %}selected{% endif %}>Family</option>
+                            <option value="partner" {% if key2.relationship_type == 'partner' %}selected{% endif %}>Partner</option> -->
+                       
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span>
+                            <button type="submit" class="submit-button" style="display: none;">Submit</button> -->
+                            <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('relation_typeRadioContainer', 'descriptionRadioContainer');"></i>
+              
+                            <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                            
+                            <i class="fas fa-edit edit-icon-right"  data-radio-container="relation_typeRadioContainer" onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                            <i class="fas fa-globe globe-icon" id="globe1"onclick="toggleRadioContainer('relation_typeRadioContainer', 'descriptionRadioContainer');"></i>
+                              
+                            
+                            <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                       
+                    </div>
+                </div>
+                
+
+                  
+                
+                    <!-- Radio buttons for "Title" -->
+                    <div class="radio-container" id="relation_typeRadioContainer">
+                        <form method="post" action="{% url 'relationship_type_update_visibility' pk=key2.id %}">
+                       
+                            {% csrf_token %}
+                        <div class="opt-container">
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Public-Friends" value="Public Friends"name="relationship_type_Visibility"onclick="this.form.submit()"checked>Public Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Friends"value="Friends"name="relationship_type_Visibility"onclick="this.form.submit()">Friends
+                              </div>
+                            </div>
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Private-Friends"value="Private Friends"name="relationship_type_Visibility"onclick="this.form.submit()">Private Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Only-Me"value="Only Me" name="relationship_type_Visibility"onclick="this.form.submit()" >Only Me
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                        <!-- <button type="submit">Save</button> -->
+                    </div>
+               
+
+
+                <!-- Submit Button -->
+                <!-- <button type="submit" class="submit-button">Submit<a href="relationshipshowpage"> </button></a> -->
+            </form>
+        </div>
+        </div>
+        <br>
+
+        <script>
+
+  // Function to set the selected radio button value based on local storage
+  function setSelectedRadioValue(containerId, localStorageKey) {
+    const container = document.getElementById(containerId);
+    const radioButtons = container.querySelectorAll('input[type="radio"]');
+    const selectedValue = localStorage.getItem(localStorageKey);
+
+    if (selectedValue) {
+      for (const radio of radioButtons) {
+        if (radio.value === selectedValue) {
+          radio.checked = true;
+          break;
+        }
+      }
+    }
+  }
+
+  // Function to handle radio button changes and update local storage
+  function handleRadioChange(containerId, localStorageKey) {
+    const container = document.getElementById(containerId);
+    const radioButtons = container.querySelectorAll('input[type="radio"]');
+
+    for (const radio of radioButtons) {
+      radio.addEventListener('change', function () {
+        if (this.checked) {
+          localStorage.setItem(localStorageKey, this.value);
+        }
+      });
+    }
+  }
+
+  // Call the functions to set initial radio button state and handle changes for the "Relationships" form
+  setSelectedRadioValue('relation_nameRadioContainer', 'relation_nameRadioSelection');
+  handleRadioChange('relation_nameRadioContainer', 'relation_nameRadioSelection');
+
+  setSelectedRadioValue('relation_typeRadioContainer', 'relation_typeRadioSelection');
+  handleRadioChange('relation_typeRadioContainer', 'relation_typeRadioSelection');
+
+  // You can do the same for other sections like "Select Relationships" if needed
+
+
+ function toggleMargin(editIcon, globeIconId) {
+        const inputElement = editIcon.parentElement.querySelector('input');
+        const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        // Check if any other input field is currently editable
+        const otherEditIcons = document.querySelectorAll(".edit-icon-right");
+        otherEditIcons.forEach(otherEditIcon => {
+            const otherInput = otherEditIcon.parentElement.querySelector('input');
+            if (otherInput !== inputElement && !otherInput.readOnly) {
+                // Other input is editable, make it readonly
+                otherInput.readOnly = true;
+                const otherGlobeIcon = otherEditIcon.parentElement.querySelector("." + globeIconId);
+                const otherSubmitButton = otherEditIcon.parentElement.querySelector(".submit-button");
+                otherSubmitButton.style.display = "none";
+                otherEditIcon.style.display = "inline";
+                otherGlobeIcon.style.marginRight = "40px";
+                const radioContainerId = otherEditIcon.getAttribute("data-radio-container");
+                if (radioContainerId) {
+                    const radioContainer = document.getElementById(radioContainerId);
+                    radioContainer.style.display = "none";
+                }
+            }
+        });
+
+        if (inputElement.readOnly) {
+            // If the input is currently readonly, make it editable
+            inputElement.readOnly = false;
+            submitButton.style.display = "inline";
+            editIcon.style.display = "none";
+            globeIcon.style.marginRight = "80px";
+            inputElement.focus();
+        } else {
+            // If the input is currently editable, make it readonly
+            inputElement.readOnly = true;
+            submitButton.style.display = "none";
+            editIcon.style.display = "inline";
+            globeIcon.style.marginRight = "85px";
+            const radioContainerId = editIcon.getAttribute("data-radio-container");
+            if (radioContainerId) {
+                const radioContainer = document.getElementById(radioContainerId);
+                radioContainer.style.display = "none";
+            }
+        }
+    }
+
+    function toggleRadioContainer(showRadioContainerId, hideRadioContainerId) {
+        const showRadioContainer = document.getElementById(showRadioContainerId);
+        const hideRadioContainer = document.getElementById(hideRadioContainerId);
+
+        if (showRadioContainer) {
+            showRadioContainer.style.display = "block";
+        }
+
+        if (hideRadioContainer) {
+            hideRadioContainer.style.display = "none";
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  function toggleMargin(editIcon, globeIconId) {
+//             const inputElement = editIcon.parentElement.querySelector('input');
+//             const submitButton = editIcon.parentElement.querySelector(".submit-button");
+//             const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+//             // Check if any other input field is currently editable
+//             const otherEditIcons = document.querySelectorAll(".edit-icon-right");
+//             otherEditIcons.forEach(otherEditIcon => {
+//                 const otherInput = otherEditIcon.parentElement.querySelector('input');
+//                 if (otherInput !== inputElement && !otherInput.readOnly) {
+//                     // Other input is editable, make it readonly
+//                     otherInput.readOnly = true;
+//                     const otherGlobeIcon = otherEditIcon.parentElement.querySelector("." + globeIconId);
+//                     const otherSubmitButton = otherEditIcon.parentElement.querySelector(".submit-button");
+//                     otherSubmitButton.style.display = "none";
+//                     otherEditIcon.style.display = "inline";
+//                     otherGlobeIcon.style.marginRight = "40px";
+//                 }
+//             });
+
+//             if (inputElement.readOnly) {
+//                 // If the input is currently readonly, make it editable
+//                 inputElement.readOnly = false;
+//                 submitButton.style.display = "inline";
+//                 editIcon.style.display = "none";
+//                 globeIcon.style.marginRight = "80px";
+//                 inputElement.focus();
+//             } else {
+//                 // If the input is currently editable, make it readonly
+//                 inputElement.readOnly = true;
+//                 submitButton.style.display = "none";
+//                 editIcon.style.display = "inline";
+//                 globeIcon.style.marginRight = "85px";
+//             }
+//         }
+
+
+        
+        // function toggleMargin(editIcon, globeIconId) {
+        //     const inputElement = editIcon.parentElement.querySelector('input');
+        //     const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        //     const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        //     if (inputElement.readOnly) {
+        //         // If the input is currently readonly, make it editable
+        //         inputElement.readOnly = false;
+        //         submitButton.style.display = "inline";
+        //         editIcon.style.display = "none";
+        //         globeIcon.style.marginRight = "80px"; // Set the margin-right to 0
+        //         inputElement.focus();
+        //     } else {
+        //         // If the input is currently editable, make it readonly
+        //         inputElement.readOnly = true;
+        //         submitButton.style.display = "none";
+        //         editIcon.style.display = "inline";
+        //         globeIcon.style.marginRight = "75px"; // Set the margin-right back to 75px
+        //     }
+        // }
+
+
+
+
+
+
+
+
+
+  //           function toggleRadioContainer(containerId, otherContainerId) {
+  //              var container = document.getElementById(containerId);
+  //              var otherContainer = document.getElementById(otherContainerId);
+   
+  //              // Close the other container, if open
+  //              closeRadioContainer(otherContainerId);
+   
+  //              if (container.style.display === 'block') {
+  //                  container.style.display = 'none';
+  //              } else {
+  //                  container.style.display = 'block';
+  //              }
+  //          }
+   
+  //          // JavaScript to close the radio button container
+  //          function closeRadioContainer(containerId) {
+  //              var container = document.getElementById(containerId);
+  //              container.style.display = 'none';
+  //          }
+  //  function toggleRadioContainer(containerId) {
+  //              var container = document.getElementById(containerId);
+  //              if (container.style.display === 'block') {
+  //                  container.style.display = 'none';
+  //              } else {
+  //                  container.style.display = 'block';
+  //              }
+  //          }
+      
+   
+  //   function toggleRadioContainer(containerId) {
+  //              var containers = document.querySelectorAll('.radio-container');
+  //              containers.forEach(function(container) {
+  //                  container.style.display = 'none';
+  //              });
+   
+  //              var container = document.getElementById(containerId);
+  //              container.style.display = 'block';
+  //          }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+  //      // edit icon
+  //  function toggleInput(editIcon) {
+  //      const inputElement = editIcon.parentElement.querySelector('input');
+  //      const submitButton = editIcon.parentElement.querySelector(".submit-button");
+  //      const globeIcon = editIcon.parentElement.querySelector(".fas.fa-globe");
+   
+  //      if (inputElement.readOnly) {
+  //          // If the input is currently readonly, make it editable
+  //          inputElement.readOnly = false;
+  //          submitButton.style.display = "inline";
+  //          editIcon.style.display = "none";
+  //          globeIcon.style.display = "none"; // Hide the globe icon
+  //          inputElement.focus();
+  //      } else {
+  //          // If the input is currently editable, make it readonly
+  //          inputElement.readOnly = true;
+  //          submitButton.style.display = "none";
+  //          editIcon.style.display = "inline";
+  //          globeIcon.style.display = "inline"; // Show the globe icon
+  //      }
+  //  }
+   
+   
+           </script>
+               
+           
+           
+           
+</body>
+</html>        

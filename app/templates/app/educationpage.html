@@ -1,0 +1,75 @@
+
+
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Show</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove underlines from table header cells */
+    table th {
+     padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <h2>Data Stored</h2>
+  
+ 
+<h3>Show</h3>
+  <table class="table">
+    {% if key1 %}
+    <thead>
+      <tr>
+        <th>School/College:</th>
+        <th>Degree:</th>
+        <th>Field of Study:</th>
+        <th>University Name:</th>
+        <th>Start Date :</th>
+        <th>End Date:</th>
+        <th>Description:</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in key1 %}
+      <tr>
+        <td>{{ item.school_college }}</td>
+        <td>{{ item.degree}}</td>
+        <td>{{ item.field_of_study  }}</td>
+        <td>{{ item.university_name }}</td>
+        <td>{{ item.edu_start_date }}</td>
+        <td>{{ item.edu_end_date }}</td>
+        <td>{{ item.edu_des}}</td>
+        
+        <!-- <td>
+          <form name="Editform" action="{% url 'educationeditpage' pk=item.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="edit">
+          </form>
+        </td> -->
+        <td>
+          <form name="Deleteform" action="{% url 'educationdeletepage' pk=item.id %}" method="post">
+            {% csrf_token %}
+            <input type="submit" value="delete">
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+    {% endif %}
+  </table>
+</div>
+
+</body>
+</html>

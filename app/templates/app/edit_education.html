@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <title>Edit</title>
+    <style>
+        /* Add your CSS styles here */
+        
+        body {
+    margin: 0;
+    height: 100%;
+    font-family: "Lato", sans-serif;
+   
+  }
+  
+
+.container{        /*TOTAL CONTAINER*/
+    margin:30px;
+    padding: 0;
+    
+    background-color: gainsboro;
+    height: 100%;
+    width:100%;
+    position:fixed;
+   /* overflow:auto; */
+    display: flex;
+}
+
+   
+  .left-container a {
+
+    color: black;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  .left-container a:hover {
+    
+    color: orangered;
+  }
+.left-container{     /*LEFT CONTAINER*/
+    width: 30%;
+    height: 97%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 15%;
+    padding-bottom: 15%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* align-items: center; */
+    
+    background-color: white;
+
+}
+
+
+
+
+
+.right-container{      /*RIGHT CONTAINER*/
+    width: 70%;
+    height: 97%;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    background-color:white;
+    overflow-y: scroll;
+
+}
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+       
+
+        .icon-left,
+        .edit-icon-right {
+            color:orange;
+            cursor: pointer;
+            position: absolute;
+            top: 50%; /* Vertically center the icon */
+            transform: translateY(-50%); /* Vertically center the icon */
+            /* display: none; */
+            display: inline;
+            
+        }
+
+        .icon-left {
+             /* left: 10px; */
+             color:gray;
+             /* right:5px; */
+             margin-left: 5px;
+             margin-right:5px;
+             
+        }
+
+ 
+
+
+
+
+
+
+
+         .edit-icon-right {
+            right: 10px; /* Adjust the right position as needed */
+            /* padding:5px;
+            margin: 5px; */
+            /* left: 50px; */
+            cursor: pointer;
+    padding: 5px;
+        }
+        
+
+       
+
+        /* Submit Button */
+        .submit-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+       
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .input-container {
+            position: relative;
+            display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+        }
+
+        
+        /* Show edit icon on hover */
+        /* .input-container:hover .edit-icon {
+            display: inline;
+        } */
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="number"],
+        .form-group input[type="url"],
+        .form-group input[type="date"],
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding-left: 30px;
+            flex:1;
+            border: none;
+            outline: none;
+        }
+
+        /* Submit Button */
+        .submit-button {
+            margin-top: 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            /* background-color: lightblue; */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+
+        top: 14%;
+        left: 87%;
+        transform: translateY(-50%);
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
+        }
+        .links{
+            background-color: whitesmoke;
+            /* align-items: center; */
+            /* text-align: center; */
+            /* text-decoration: none; */
+            margin-bottom: 5px;
+            
+        }
+        /* #contact_number,#email,#lives_in,#last_studied,#gender,#total_experience,#relationship_status,
+        #languages,#birthday,#website,#religion{
+    /* padding-left: 25px; 
+    margin:5px;
+/* color: grey; 
+} */
+.link-icons{
+    margin-right: 5px;
+    margin-left: 5px;
+
+}
+img{
+    height: 50px;
+    width: 0px;
+}
+.calendar-icon-right {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    /* -----------------NEW CSS-------------- */
+.right-each-container{
+    background-color: grey;
+    margin-bottom: 5px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.fa-globe {
+    color: orange; /* Change the color as desired */
+    margin-right: 40px; /* Adjust the spacing as needed */
+}
+.radio-container {
+            display: none;
+            margin-bottom: 10px;
+    position: relative;
+        }
+.globe-icon{
+    position: absolute;
+    right: 0;
+    /* display: none; */
+    /* margin-right: 75px; */
+    
+}
+
+
+    
+.opt-container {
+      width: 300px;
+      margin: 0 auto;
+      text-align: center;
+      background-color: aqua;
+      padding-top: 4px;
+      padding-bottom: 20px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: space-between; /* Divide into two parts */
+      font-family: Arial, sans-serif;
+    }
+    .opt-options {
+      width: 45%; /* Adjust the width of each part */
+    }
+    .opt-option {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+      text-align: center;
+      padding: 10px;
+      border-radius: 10px; /* Add border radius for rounded corners */
+    }
+    .opt-option input {
+      margin-right: 5px;
+      margin-left: 5px; /* Adjust the left margin for inputs */
+      height: 20px; /* Set a fixed height for inputs */
+    }
+
+    /* Apply different background colors to each option */
+    .opt-option:nth-child(1) {
+      background-color: #ffcccb; /* Light Red */
+    }
+    .opt-option:nth-child(2) {
+      background-color: #b3e0ff; /* Light Blue */
+      padding: 12%;
+      margin-top: 5%;
+      margin-bottom: 0;
+    }
+    /* .opt-option:nth-child(3) {
+      background-color: #c2f0c2; /* Light Green *
+    }
+    .opt-option:nth-child(4) {
+      background-color: #ffd966; /* Light Yellow *
+    } */
+    </style>
+</head>
+<body>
+
+    <div class="right-each-container">   
+        <div class="form-container" id="education">
+            <h1>Education</h1>
+            <!-- <form method="post"> -->
+                <!-- {% csrf_token %} -->
+                <form method="post" action="{% url 'educationupdatepage' pk=key2.id%}">
+                    
+                    {% csrf_token %}
+                    <!-- School/College (Dropdown) -->
+                    <form method="post" action="{% url 'edu_update_school_college' pk=key2.id %}"> 
+                        {% csrf_token %}
+                <div class="form-group">
+                    <label for="school_college">College</label>
+                    <div class="input-container">
+                        <i class='fas fa-school icon-left'></i>
+                        <input type="text" id="school_college" name="School_college"value="{{key2.school_college }}" required readonly>
+                            <!-- <option value="School" {% if key2.school_college == 'School' %}selected{% endif %}>School</option>
+                            <option value="College" {% if key2.school_college == 'College' %}selected{% endif %}>College</option>
+                            <!- Add more options as needed ->
+                        </select> -->
+                        <!-- <span class="edit-icon-left"><i class="fas fa-edit"></i></span> -->
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('edu_collegeRadioContainer', 'descriptionRadioContainer');"></i>
+            
+                        <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                       
+                        <i class="fas fa-edit edit-icon-right" data-radio-container="edu_collegeRadioContainer"   onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                        <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('edu_collegeRadioContainer', 'descriptionRadioContainer');"></i>
+                          
+                        <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                   
+                    </div>
+                </div>
+                    </form>
+
+
+
+                       
+                    
+                        <!-- Radio buttons for "Title" -->
+                        <div class="radio-container" id="edu_collegeRadioContainer">
+                          <form method="post" action="{% url 'edu_college_update_visibility' pk=key2.id %}">
+                       
+                            {% csrf_token %}
+                            <div class="opt-container">
+                                <div class="opt-options">
+                                  <div class="opt-option">
+                                    <input type="radio" id="Public-Friends" name="edu_collegeVisibility" value="Public Friends"onclick="this.form.submit()"checked>Public Friends
+                                  </div>
+                                  <div class="opt-option">
+                                    <input type="radio" id="Friends"value="Friends" name="edu_collegeVisibility"onclick="this.form.submit()">Friends
+                                  </div>
+                                </div>
+                                <div class="opt-options">
+                                  <div class="opt-option">
+                                    <input type="radio" id="Private-Friends"value="Private Friends" name="edu_collegeVisibility"onclick="this.form.submit()">Private Friends
+                                  </div>
+                                  <div class="opt-option">
+                                    <input type="radio" id="Only-Me"value="Only Me"  name="edu_collegeVisibility" onclick="this.form.submit()" >Only Me
+                                  </div>
+                                </div>
+                              </div>
+                          </form>
+                            <!-- <button type="submit">Save</button> -->
+                        </div>
+                 
+
+                <!-- Degree -->
+    
+                <form method="post" action="{% url 'edu_update_degree' pk=key2.id %}"> 
+                    {% csrf_token %}
+    
+                <div class="form-group">
+                    <label for="degree">Degree</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                         class="bi bi-mortarboard icon-left" viewBox="0 0 16 16">
+                            <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5ZM8 8.46 1.758 5.965 8 3.052l6.242 2.913L8 8.46Z"/>
+                            <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Zm-.068 1.873.22-.748 3.496 1.311a.5.5 0 0 0 .352 0l3.496-1.311.22.748L8 12.46l-3.892-1.556Z"/>
+                          </svg>
+                          <input type="text" name="Degree" id="degree" id=""  value="{{ key2.degree }}"readonly required >
+                          <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                          <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('edu_degreeRadioContainer', 'descriptionRadioContainer');"></i>
+                 
+                          <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                          
+                          <i class="fas fa-edit edit-icon-right"  data-radio-container="edu_degreeRadioContainer"   onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                        <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('edu_degreeRadioContainer', 'descriptionRadioContainer');"></i>
+                          
+                          
+                          <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                     
+                        <!-- <span class="edit-icon-left"><i class="fas fa-edit"></i></span> -->
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                    </div>
+                </div>
+                </form>
+
+
+                 
+                
+                    <!-- Radio buttons for "Title" -->
+                    <div class="radio-container" id="edu_degreeRadioContainer">
+                        <div class="opt-container">
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Public-Friends"name="edu_degreeVisibility" value="Public Friends"checked>Public Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Friends"name="edu_degreeVisibility" value="Friends">Friends
+                              </div>
+                            </div>
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Private-Friends"name="edu_degreeVisibility" value="Private Friends">Private Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Only-Me"name="edu_degreeVisibility" value="Only Me"  >Only Me
+                              </div>
+                            </div>
+                          </div>
+                        <!-- <button type="submit">Save</button> -->
+                    </div>
+                
+
+                <!-- Field of Study -->
+    
+                <form method="post" action="{% url 'edu_update_field_of_study' pk=key2.id %}"> 
+                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="field_of_study">Field of Study</label>
+                    <div class="input-container">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+                        class="bi bi-highlighter icon-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M11.096.644a2 2 0 0 1 2.791.036l1.433 1.433a2 2 0 0 1 .035 2.791l-.413.435-8.07 8.995a.5.5 0 0 1-.372.166h-3a.5.5 0 0 1-.234-.058l-.412.412A.5.5 0 0 1 2.5 15h-2a.5.5 0 0 1-.354-.854l1.412-1.412A.5.5 0 0 1 1.5 12.5v-3a.5.5 0 0 1 .166-.372l8.995-8.07.435-.414Zm-.115 1.47L2.727 9.52l3.753 3.753 7.406-8.254-2.905-2.906Zm3.585 2.17.064-.068a1 1 0 0 0-.017-1.396L13.18 1.387a1 1 0 0 0-1.396-.018l-.068.065 2.85 2.85ZM5.293 13.5 2.5 10.707v1.586L3.707 13.5h1.586Z"/>
+                          </svg>
+                        <input type="text" id="field_of_study" name="Field_of_study" value="{{ key2.field_of_study  }}"readonly required >
+                        
+                        <!-- <span class="edit-icon-left"><i class="fas fa-edit"></i></span> -->
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('edu_fieldy_studyRadioContainer', 'descriptionRadioContainer');"></i>
+                 
+                        <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                       
+                        <i class="fas fa-edit edit-icon-right"  data-radio-container="edu_fieldy_studyRadioContainer"   onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                        <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('edu_fieldy_studyRadioContainer', 'descriptionRadioContainer');"></i>
+                          
+                       
+                       
+                        <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                   
+                    </div>
+                </div>
+                </form>
+
+                
+                
+                    <!-- Radio buttons for "Title" -->
+                    <div class="radio-container" id="edu_fieldy_studyRadioContainer">
+                        <div class="opt-container">
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Public-Friends"name="edu_fieldVisibility"  value="Public Friends"checked>Public Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Friends"name="edu_fieldVisibility" value="Friends">Friends
+                              </div>
+                            </div>
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Private-Friends"name="edu_fieldVisibility" value="Private Friends">Private Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Only-Me"name="edu_fieldVisibility" value="Only Me"  >Only Me
+                              </div>
+                            </div>
+                          </div>
+                        <!-- <button type="submit">Save</button> -->
+                    </div>
+                
+
+                <!-- University Name -->
+                <form method="post" action="{% url 'edu_update_university_name' pk=key2.id %}"> 
+                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="university_name">University Name</label>
+                    <div class="input-container">
+                        <i class='fas fa-school icon-left'></i>
+                        <input type="text" id="university_name" name="University_name" value="{{ key2.university_name   }}" required readonly>
+                        <!-- <span class="edit-icon-left"><i class="fas fa-edit"></i></span> -->
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('edu_univercityRadioContainer', 'descriptionRadioContainer');"></i>
+                 
+                        <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                        
+                        <i class="fas fa-edit edit-icon-right" data-radio-container="edu_univercityRadioContainer"    onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                        <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('edu_univercityRadioContainer', 'descriptionRadioContainer');"></i>
+                          
+                        
+                        <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                   
+                    </div>
+                </div>
+                </form>
+
+
+                    
+               
+                    <!-- Radio buttons for "Title" -->
+                    <div class="radio-container" id="edu_univercityRadioContainer">
+                        <div class="opt-container">
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Public-Friends"name="edu_univercityVisibility"  value="Public Friends"checked>Public Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Friends"name="edu_univercityVisibility"  value="Friends">Friends
+                              </div>
+                            </div>
+                            <div class="opt-options">
+                              <div class="opt-option">
+                                <input type="radio" id="Private-Friends"name="edu_univercityVisibility"  value="Private Friends">Private Friends
+                              </div>
+                              <div class="opt-option">
+                                <input type="radio" id="Only-Me"name="edu_univercityVisibility"  value="Only Me"  >Only Me
+                              </div>
+                            </div>
+                          </div>
+                        <!-- <button type="submit">Save</button> -->
+                    </div>
+              
+
+    <!-- Start Date (Date Format) -->
+    <form method="post" action="{% url 'edu_update_start_date' pk=key2.id %}"> 
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="start_date">Start Date</label>
+        <div class="input-container">
+            <i class="far fa-calendar-alt icon-left"></i>
+            <input type="date" id="start_date" name="Start_date" value="{{ key2.edu_start_date|date:'Y-m-d' }}" readonly  required >
+            <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('edu_startdateRadioContainer', 'descriptionRadioContainer');"></i>
+        
+            <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+           
+            <i class="fas fa-edit edit-icon-right" data-radio-container="edu_startdateRadioContainer"  onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+            <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('edu_startdateRadioContainer', 'descriptionRadioContainer');"></i>
+              
+           
+            <button type="submit" class="submit-button" style="display: none;">Submit</button>
+        </div>
+    </div>
+    </form>
+
+                  
+   
+        <!-- Radio buttons for "Title" -->
+        <div class="radio-container" id="edu_startdateRadioContainer">
+            <div class="opt-container">
+                <div class="opt-options">
+                  <div class="opt-option">
+                    <input type="radio" id="Public-Friends"name="edu_startdateVisibility"   value="Public Friends"checked>Public Friends
+                  </div>
+                  <div class="opt-option">
+                    <input type="radio" id="Friends"name="edu_startdateVisibility"   value="Friends">Friends
+                  </div>
+                </div>
+                <div class="opt-options">
+                  <div class="opt-option">
+                    <input type="radio" id="Private-Friends"name="edu_startdateVisibility"   value="Private Friends">Private Friends
+                  </div>
+                  <div class="opt-option">
+                    <input type="radio" id="Only-Me"name="edu_startdateVisibility"   value="Only Me"  >Only Me
+                  </div>
+                </div>
+              </div>
+            <!-- <button type="submit">Save</button> -->
+        </div>
+    
+
+    <!-- End Date (Date Format) -->
+    <form method="post" action="{% url 'edu_update_end_date' pk=key2.id %}"> 
+        {% csrf_token %}
+    <div class="form-group">
+        <label for="end_date">End Date</label>
+        <div class="input-container">
+            <i class="far fa-calendar-alt icon-left"></i>
+            <input type="date" id="end_date" name="End_date" value="{{ key2.edu_end_date|date:'Y-m-d' }}" readonly required >
+            <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('edu_enddateRadioContainer', 'descriptionRadioContainer');"></i>
+          
+            <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+            <i class="fas fa-edit edit-icon-right"data-radio-container="edu_enddateRadioContainer"  onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+            <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('edu_enddateRadioContainer', 'descriptionRadioContainer');"></i>
+              
+            
+            <button type="submit" class="submit-button" style="display: none;">Submit</button>
+        </div>
+    </div>
+    </form>
+
+
+                   
+   
+        <!-- Radio buttons for "Title" -->
+        <div class="radio-container" id="edu_enddateRadioContainer">
+            <div class="opt-container">
+                <div class="opt-options">
+                  <div class="opt-option">
+                    <input type="radio" id="Public-Friends"name="edu_enddateVisibility"    value="Public Friends"checked>Public Friends
+                  </div>
+                  <div class="opt-option">
+                    <input type="radio" id="Friends" name="edu_enddateVisibility"value="Friends">Friends
+                  </div>
+                </div>
+                <div class="opt-options">
+                  <div class="opt-option">
+                    <input type="radio" id="Private-Friends" name="edu_enddateVisibility"value="Private Friends">Private Friends
+                  </div>
+                  <div class="opt-option">
+                    <input type="radio" id="Only-Me" name="edu_enddateVisibility"value="Only Me"  >Only Me
+                  </div>
+                </div>
+              </div>
+            <!-- <button type="submit">Save</button> -->
+        </div>
+   
+
+        
+                <!-- Description -->
+                <form method="post" action="{% url 'edu_update_des' pk=key2.id %}"> 
+                    {% csrf_token %}
+                <div class="form-group">
+                    <label for="description">Deescription</label>
+                    <div class="input-container">
+                        <i class="fas fa-file-alt icon-left"></i> 
+                        <input type="text" id="description" name="Description" value="{{ key2.edu_des}}"readonly required ></input>
+                        <!-- <span class="edit-icon-left"><i class="fas fa-edit"></i></span> -->
+                        <!-- <span class="edit-icon-right"><i class="fas fa-edit"></i></span> -->
+                        <!-- <i class="fas fa-globe edit-icon-right" onclick="toggleRadioContainer('edu_descriptionRadioContainer', 'descriptionRadioContainer');"></i>
+           
+                        <span class="edit-icon-right" onclick="toggleInput(this);"><i class="fas fa-edit"></i></span> -->
+                        
+                        <i class="fas fa-edit edit-icon-right"data-radio-container="edu_descriptionRadioContainer"  onclick="toggleMargin(this, 'globe-icon');"></i>
+                    
+                        <i class="fas fa-globe globe-icon" id="globe1" onclick="toggleRadioContainer('edu_descriptionRadioContainer', 'descriptionRadioContainer');"></i>
+                          
+                        
+                        <button type="submit" class="submit-button" style="display: none;">Submit</button>
+                   
+                    </div>
+                </div>
+                </form>
+                <!-- Submit Button -->
+                <!-- <button type="submit" class="submit-button">Save<a href="educationpage"> </button></a> -->
+            </form>
+                
+           
+                <!-- Radio buttons for "Title" -->
+                <div class="radio-container" id="edu_descriptionRadioContainer">
+                    <div class="opt-container">
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Public-Friends" name="edu_desVisibility" value="Public Friends"checked>Public Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Friends" name="edu_desVisibility" value="Friends">Friends
+                          </div>
+                        </div>
+                        <div class="opt-options">
+                          <div class="opt-option">
+                            <input type="radio" id="Private-Friends" name="edu_desVisibility" value="Private Friends">Private Friends
+                          </div>
+                          <div class="opt-option">
+                            <input type="radio" id="Only-Me" name="edu_desVisibility" value="Only Me"  >Only Me
+                          </div>
+                        </div>
+                      </div>
+                    <!-- <button type="submit">Save</button> -->
+                </div>
+            
+        </div>
+        </div><br>
+
+
+
+        <script> 
+
+  // Function to set the selected radio button value based on local storage
+  function setSelectedRadioValue(containerId, localStorageKey) {
+    const container = document.getElementById(containerId);
+    const radioButtons = container.querySelectorAll('input[type="radio"]');
+    const selectedValue = localStorage.getItem(localStorageKey);
+
+    if (selectedValue) {
+      for (const radio of radioButtons) {
+        if (radio.value === selectedValue) {
+          radio.checked = true;
+          break;
+        }
+      }
+    }
+  }
+
+  // Function to handle radio button changes and update local storage
+  function handleRadioChange(containerId, localStorageKey) {
+    const container = document.getElementById(containerId);
+    const radioButtons = container.querySelectorAll('input[type="radio"]');
+
+    for (const radio of radioButtons) {
+      radio.addEventListener('change', function () {
+        if (this.checked) {
+          localStorage.setItem(localStorageKey, this.value);
+        }
+      });
+    }
+  }
+
+ 
+ 
+  // Call the functions to set initial radio button state and handle changes for education details
+  setSelectedRadioValue('edu_collegeRadioContainer', 'edu_collegeRadioSelection');
+  handleRadioChange('edu_collegeRadioContainer', 'edu_collegeRadioSelection');
+
+  setSelectedRadioValue('edu_degreeRadioContainer', 'edu_degreeRadioSelection');
+  handleRadioChange('edu_degreeRadioContainer', 'edu_degreeRadioSelection');
+
+  setSelectedRadioValue('edu_fieldy_studyRadioContainer', 'edu_fieldy_studyRadioSelection');
+  handleRadioChange('edu_fieldy_studyRadioContainer', 'edu_fieldy_studyRadioSelection');
+
+  setSelectedRadioValue('edu_univercityRadioContainer', 'edu_univercityRadioSelection');
+  handleRadioChange('edu_univercityRadioContainer', 'edu_univercityRadioSelection');
+
+  setSelectedRadioValue('edu_startdateRadioContainer', 'edu_startdateRadioSelection');
+  handleRadioChange('edu_startdateRadioContainer', 'edu_startdateRadioSelection');
+
+  setSelectedRadioValue('edu_enddateRadioContainer', 'edu_enddateRadioSelection');
+  handleRadioChange('edu_enddateRadioContainer', 'edu_enddateRadioSelection');
+
+  setSelectedRadioValue('edu_descriptionRadioContainer', 'edu_descriptionRadioSelection');
+  handleRadioChange('edu_descriptionRadioContainer', 'edu_descriptionRadioSelection');
+
+
+
+function toggleMargin(editIcon, globeIconId) {
+        const inputElement = editIcon.parentElement.querySelector('input');
+        const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        // Check if any other input field is currently editable
+        const otherEditIcons = document.querySelectorAll(".edit-icon-right");
+        otherEditIcons.forEach(otherEditIcon => {
+            const otherInput = otherEditIcon.parentElement.querySelector('input');
+            if (otherInput !== inputElement && !otherInput.readOnly) {
+                // Other input is editable, make it readonly
+                otherInput.readOnly = true;
+                const otherGlobeIcon = otherEditIcon.parentElement.querySelector("." + globeIconId);
+                const otherSubmitButton = otherEditIcon.parentElement.querySelector(".submit-button");
+                otherSubmitButton.style.display = "none";
+                otherEditIcon.style.display = "inline";
+                otherGlobeIcon.style.marginRight = "40px";
+                const radioContainerId = otherEditIcon.getAttribute("data-radio-container");
+                if (radioContainerId) {
+                    const radioContainer = document.getElementById(radioContainerId);
+                    radioContainer.style.display = "none";
+                }
+            }
+        });
+
+        if (inputElement.readOnly) {
+            // If the input is currently readonly, make it editable
+            inputElement.readOnly = false;
+            submitButton.style.display = "inline";
+            editIcon.style.display = "none";
+            globeIcon.style.marginRight = "80px";
+            inputElement.focus();
+        } else {
+            // If the input is currently editable, make it readonly
+            inputElement.readOnly = true;
+            submitButton.style.display = "none";
+            editIcon.style.display = "inline";
+            globeIcon.style.marginRight = "85px";
+            const radioContainerId = editIcon.getAttribute("data-radio-container");
+            if (radioContainerId) {
+                const radioContainer = document.getElementById(radioContainerId);
+                radioContainer.style.display = "none";
+            }
+        }
+    }
+
+    function toggleRadioContainer(showRadioContainerId, hideRadioContainerId) {
+        const showRadioContainer = document.getElementById(showRadioContainerId);
+        const hideRadioContainer = document.getElementById(hideRadioContainerId);
+
+        if (showRadioContainer) {
+            showRadioContainer.style.display = "block";
+        }
+
+        if (hideRadioContainer) {
+            hideRadioContainer.style.display = "none";
+        }
+    }
+
+
+
+
+
+
+
+//  function toggleMargin(editIcon, globeIconId) {
+//             const inputElement = editIcon.parentElement.querySelector('input');
+//             const submitButton = editIcon.parentElement.querySelector(".submit-button");
+//             const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+//             // Check if any other input field is currently editable
+//             const otherEditIcons = document.querySelectorAll(".edit-icon-right");
+//             otherEditIcons.forEach(otherEditIcon => {
+//                 const otherInput = otherEditIcon.parentElement.querySelector('input');
+//                 if (otherInput !== inputElement && !otherInput.readOnly) {
+//                     // Other input is editable, make it readonly
+//                     otherInput.readOnly = true;
+//                     const otherGlobeIcon = otherEditIcon.parentElement.querySelector("." + globeIconId);
+//                     const otherSubmitButton = otherEditIcon.parentElement.querySelector(".submit-button");
+//                     otherSubmitButton.style.display = "none";
+//                     otherEditIcon.style.display = "inline";
+//                     otherGlobeIcon.style.marginRight = "40px";
+//                 }
+//             });
+
+//             if (inputElement.readOnly) {
+//                 // If the input is currently readonly, make it editable
+//                 inputElement.readOnly = false;
+//                 submitButton.style.display = "inline";
+//                 editIcon.style.display = "none";
+//                 globeIcon.style.marginRight = "80px";
+//                 inputElement.focus();
+//             } else {
+//                 // If the input is currently editable, make it readonly
+//                 inputElement.readOnly = true;
+//                 submitButton.style.display = "none";
+//                 editIcon.style.display = "inline";
+//                 globeIcon.style.marginRight = "85px";
+//             }
+//         }
+
+
+
+
+        // function toggleMargin(editIcon, globeIconId) {
+        //     const inputElement = editIcon.parentElement.querySelector('input');
+        //     const submitButton = editIcon.parentElement.querySelector(".submit-button");
+        //     const globeIcon = editIcon.parentElement.querySelector("." + globeIconId);
+
+        //     if (inputElement.readOnly) {
+        //         // If the input is currently readonly, make it editable
+        //         inputElement.readOnly = false;
+        //         submitButton.style.display = "inline";
+        //         editIcon.style.display = "none";
+        //         globeIcon.style.marginRight = "80px"; // Set the margin-right to 0
+        //         inputElement.focus();
+        //     } else {
+        //         // If the input is currently editable, make it readonly
+        //         inputElement.readOnly = true;
+        //         submitButton.style.display = "none";
+        //         editIcon.style.display = "inline";
+        //         globeIcon.style.marginRight = "75px"; // Set the margin-right back to 75px
+        //     }
+        // }
+
+        
+
+//          function toggleRadioContainer(containerId, otherContainerId) {
+//             var container = document.getElementById(containerId);
+//             var otherContainer = document.getElementById(otherContainerId);
+
+//             // Close the other container, if open
+//             closeRadioContainer(otherContainerId);
+
+//             if (container.style.display === 'block') {
+//                 container.style.display = 'none';
+//             } else {
+//                 container.style.display = 'block';
+//             }
+//         }
+
+//         // JavaScript to close the radio button container
+//         function closeRadioContainer(containerId) {
+//             var container = document.getElementById(containerId);
+//             container.style.display = 'none';
+//         }
+// function toggleRadioContainer(containerId) {
+//             var container = document.getElementById(containerId);
+//             if (container.style.display === 'block') {
+//                 container.style.display = 'none';
+//             } else {
+//                 container.style.display = 'block';
+//             }
+//         }
+   
+
+//  function toggleRadioContainer(containerId) {
+//             var containers = document.querySelectorAll('.radio-container');
+//             containers.forEach(function(container) {
+//                 container.style.display = 'none';
+//             });
+
+//             var container = document.getElementById(containerId);
+//             container.style.display = 'block';
+//         }
+
+
+
+
+
+
+
+
+
+//     // edit icon
+// function toggleInput(editIcon) {
+//     const inputElement = editIcon.parentElement.querySelector('input');
+//     const submitButton = editIcon.parentElement.querySelector(".submit-button");
+//     const globeIcon = editIcon.parentElement.querySelector(".fas.fa-globe");
+
+//     if (inputElement.readOnly) {
+//         // If the input is currently readonly, make it editable
+//         inputElement.readOnly = false;
+//         submitButton.style.display = "inline";
+//         editIcon.style.display = "none";
+//         globeIcon.style.display = "none"; // Hide the globe icon
+//         inputElement.focus();
+//     } else {
+//         // If the input is currently editable, make it readonly
+//         inputElement.readOnly = true;
+//         submitButton.style.display = "none";
+//         editIcon.style.display = "inline";
+//         globeIcon.style.display = "inline"; // Show the globe icon
+//     }
+// }
+
+
+        </script>
+            
+        
+        
+        
+    
+
+</body>
+</html>
